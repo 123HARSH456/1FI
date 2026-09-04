@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F5F6FA] text-[#151928] font-sans antialiased overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F2F8;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5DAE6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6C38FF;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 1Fi Signature Gradients */
+.gradient-1fi-purple {
+  background: linear-gradient(135deg, #5318E8 0%, #763DFF 100%);
+}
+
+.gradient-1fi-card {
+  background: linear-gradient(135deg, #4A10DC 0%, #6E38FF 60%, #8754FF 100%);
+}
+
+.gradient-offer-banner {
+  background: linear-gradient(135deg, #0D2847 0%, #153A65 100%);
+}
+
+.card-white {
+  background: #FFFFFF;
+  border: 1px solid #EAEFF6;
+  box-shadow: 0 4px 18px -2px rgba(21, 25, 40, 0.05);
+}
+
+.card-white-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-white-hover:hover {
+  transform: translateY(-2px);
+  border-color: #D8C7FF;
+  box-shadow: 0 10px 24px -4px rgba(108, 56, 255, 0.12);
+}
