@@ -1,7 +1,10 @@
 const Product = require('../models/Product');
+const connectDB = require('../db/connection');
 
 exports.getAllProducts = async (req, res) => {
   try {
+    await connectDB();
+
     const { category, brand, search } = req.query;
     const filter = {};
 
@@ -88,6 +91,8 @@ exports.getAllProducts = async (req, res) => {
 
 exports.getProductBySlug = async (req, res) => {
   try {
+    await connectDB();
+
     const { slug } = req.params;
     const product = await Product.findOne({ slug }).lean();
 
@@ -113,6 +118,8 @@ exports.getProductBySlug = async (req, res) => {
 
 exports.getVariantEmiPlans = async (req, res) => {
   try {
+    await connectDB();
+
     const { id } = req.params;
     const product = await Product.findOne({ 'variants._id': id }).lean();
 
@@ -150,6 +157,8 @@ exports.getVariantEmiPlans = async (req, res) => {
 
 exports.createEmiOrder = async (req, res) => {
   try {
+    await connectDB();
+
     const { productId, variantId, emiPlanId, userPhone, userPan } = req.body;
 
     if (!productId || !variantId || !emiPlanId) {
