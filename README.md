@@ -1,9 +1,16 @@
 # 🛍️ 1Fi Marketplace - Shop Page & Mutual Fund-Backed EMI Catalog
 
+> 🌐 **Live Demo**: [1Fi Marketplace | Smart EMIs Backed by Mutual Funds](https://1fi-coral.vercel.app/)  
 > **Assignment Submission for 1Fi SDE Intern Role**  
 > A faithful extension of the [1Fi Android App](https://play.google.com/store/apps/details?id=in.onefi.app&hl=en_IN) featuring a 3-tab **Shop** page and a full-stack **1Fi Marketplace** where electronics can be purchased on **0% No-Cost EMI** with **cashback invested directly into Mutual Funds** on the user's behalf.
 
 ---
+
+## 🌐 Live Production Application
+
+- **Live URL**: [1Fi Marketplace | Smart EMIs Backed by Mutual Funds](https://1fi-coral.vercel.app/)
+- **API Endpoint**: [https://1fi-coral.vercel.app/api/products](https://1fi-coral.vercel.app/api/products)
+- **Repository**: [https://github.com/Logamithrancb/1fi](https://github.com/Logamithrancb/1fi)
 
 ## 📸 Overview & Key Features
 
