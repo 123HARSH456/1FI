@@ -16,14 +16,14 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan('dev'));
 }
 
-// Serverless DB connection middleware
 app.use(async (req, res, next) => {
   try {
     await connectDB();
+    next();
   } catch (err) {
-    console.error('DB connect middleware error:', err.message);
+    console.error('Database connection error in request:', err.message);
+    next();
   }
-  next();
 });
 
 app.get('/health', (req, res) => {
