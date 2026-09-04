@@ -45,44 +45,45 @@ erDiagram
     VARIANT ||--o{ EMI_PLAN : offers
 
     PRODUCT {
-        ObjectId _id PK
-        string slug UK "apple-iphone-17-pro"
-        string name "Apple iPhone 17 Pro"
-        string brand "Apple"
-        string category "Smartphones"
+        string _id PK
+        string slug UK
+        string name
+        string brand
+        string category
         string description
-        number rating "4.9"
-        number review_count "342"
-        string badge "1Fi Choice"
+        number rating
+        number review_count
+        string badge
     }
 
     VARIANT {
-        ObjectId _id PK
-        string variant_name "256GB - Natural Titanium"
-        string storage "256GB"
-        string color "Natural Titanium"
-        string color_code "#9E978E"
-        number mrp 134900
-        number price 129900
+        string _id PK
+        string product_id FK
+        string variant_name
+        string storage
+        string color
+        string color_code
+        number mrp
+        number price
         string image_url
-        array gallery
-        number stock 18
-        boolean is_default true
+        number stock
+        boolean is_default
     }
 
     EMI_PLAN {
-        ObjectId _id PK
-        string plan_label "6 Months 0% Smart Plan"
-        number tenure_months 6
-        number interest_rate 0
-        number monthly_amount 21650
-        number cashback_amount 3500
-        string cashback_note "₹3,500 invested in Parag Parikh Flexi Cap Fund"
-        boolean fund_backed true
-        string fund_name "Parag Parikh Flexi Cap Fund"
-        boolean is_recommended true
-        number down_payment 0
-        number processing_fee 0
+        string _id PK
+        string variant_id FK
+        string plan_label
+        number tenure_months
+        number interest_rate
+        number monthly_amount
+        number cashback_amount
+        string cashback_note
+        boolean fund_backed
+        string fund_name
+        boolean is_recommended
+        number down_payment
+        number processing_fee
     }
 ```
 
