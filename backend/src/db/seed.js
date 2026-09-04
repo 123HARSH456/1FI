@@ -29,9 +29,9 @@ const seedData = [
         price: 129900,
         stock: 18,
         is_default: true,
-        image_url: '/products/iphone-17-pro.png',
+        image_url: '/images/iphone-17-pro.png',
         gallery: [
-          '/products/iphone-17-pro.png'
+          '/images/iphone-17-pro.png'
         ],
         emi_plans: [
           {
@@ -110,9 +110,9 @@ const seedData = [
         price: 149900,
         stock: 12,
         is_default: false,
-        image_url: '/products/iphone-17-pro.png',
+        image_url: '/images/iphone-17-pro.png',
         gallery: [
-          '/products/iphone-17-pro.png'
+          '/images/iphone-17-pro.png'
         ],
         emi_plans: [
           {
@@ -152,9 +152,9 @@ const seedData = [
         price: 129900,
         stock: 14,
         is_default: false,
-        image_url: '/products/iphone-17-pro.png',
+        image_url: '/images/iphone-17-pro.png',
         gallery: [
-          '/products/iphone-17-pro.png'
+          '/images/iphone-17-pro.png'
         ],
         emi_plans: [
           {
@@ -199,9 +199,9 @@ const seedData = [
         price: 129999,
         stock: 22,
         is_default: true,
-        image_url: '/products/samsung-s25-ultra.png',
+        image_url: '/images/samsung-s25-ultra.png',
         gallery: [
-          '/products/samsung-s25-ultra.png'
+          '/images/samsung-s25-ultra.png'
         ],
         emi_plans: [
           {
@@ -267,9 +267,9 @@ const seedData = [
         price: 149999,
         stock: 10,
         is_default: false,
-        image_url: '/products/samsung-s25-ultra.png',
+        image_url: '/images/samsung-s25-ultra.png',
         gallery: [
-          '/products/samsung-s25-ultra.png'
+          '/images/samsung-s25-ultra.png'
         ],
         emi_plans: [
           {
@@ -327,9 +327,9 @@ const seedData = [
         price: 99999,
         stock: 20,
         is_default: true,
-        image_url: '/products/pixel-9-pro.png',
+        image_url: '/images/pixel-9-pro.png',
         gallery: [
-          '/products/pixel-9-pro.png'
+          '/images/pixel-9-pro.png'
         ],
         emi_plans: [
           {
@@ -395,9 +395,9 @@ const seedData = [
         price: 109999,
         stock: 15,
         is_default: false,
-        image_url: '/products/pixel-9-pro.png',
+        image_url: '/images/pixel-9-pro.png',
         gallery: [
-          '/products/pixel-9-pro.png'
+          '/images/pixel-9-pro.png'
         ],
         emi_plans: [
           {
@@ -455,9 +455,9 @@ const seedData = [
         price: 64999,
         stock: 25,
         is_default: true,
-        image_url: '/products/oneplus-13.png',
+        image_url: '/images/oneplus-13.png',
         gallery: [
-          '/products/oneplus-13.png'
+          '/images/oneplus-13.png'
         ],
         emi_plans: [
           {
@@ -510,9 +510,9 @@ const seedData = [
         price: 74999,
         stock: 18,
         is_default: false,
-        image_url: '/products/oneplus-13.png',
+        image_url: '/images/oneplus-13.png',
         gallery: [
-          '/products/oneplus-13.png'
+          '/images/oneplus-13.png'
         ],
         emi_plans: [
           {
@@ -546,10 +546,6 @@ const runSeed = async () => {
     const inserted = await Product.insertMany(seedData);
     
     console.log(`[Seed] Success! Populated ${inserted.length} products to MongoDB Atlas.`);
-    inserted.forEach(p => {
-      console.log(`  - ${p.name} (${p.slug}): ${p.variants.length} variants, ${p.variants[0].emi_plans.length} EMI plans`);
-    });
-    
     process.exit(0);
   } catch (error) {
     console.error('[Seed Error]:', error);

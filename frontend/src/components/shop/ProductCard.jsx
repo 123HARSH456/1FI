@@ -29,6 +29,11 @@ export default function ProductCard({ product, onSelectProduct }) {
         <img
           src={defaultVar.image_url}
           alt={product.name}
+          onError={(e) => {
+            if (e.currentTarget.src.includes('/products/')) {
+              e.currentTarget.src = e.currentTarget.src.replace('/products/', '/images/');
+            }
+          }}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />

@@ -124,6 +124,11 @@ export default function ProductDetailPage({ slug, onBack }) {
             <img
               src={selectedVariant?.image_url}
               alt={product.name}
+              onError={(e) => {
+                if (e.currentTarget.src.includes('/products/')) {
+                  e.currentTarget.src = e.currentTarget.src.replace('/products/', '/images/');
+                }
+              }}
               className="max-h-full max-w-full object-contain drop-shadow-lg transition-transform duration-300 hover:scale-105"
             />
           </div>

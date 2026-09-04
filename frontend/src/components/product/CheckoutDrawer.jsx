@@ -164,6 +164,11 @@ export default function CheckoutDrawer({
               <img 
                 src={variant.image_url} 
                 alt={product.name} 
+                onError={(e) => {
+                  if (e.currentTarget.src.includes('/products/')) {
+                    e.currentTarget.src = e.currentTarget.src.replace('/products/', '/images/');
+                  }
+                }}
                 className="w-12 h-12 object-contain rounded-xl bg-white p-1 shrink-0 border border-[#EAEFF6]" 
               />
               <div className="flex-1 min-w-0">

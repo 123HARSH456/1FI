@@ -25,7 +25,7 @@ const FALLBACK_PRODUCTS = [
       mrp: 134900,
       price: 129900,
       stock: 18,
-      image_url: "/products/iphone-17-pro.png"
+      image_url: "/images/iphone-17-pro.png"
     },
     variants: [
       {
@@ -38,7 +38,7 @@ const FALLBACK_PRODUCTS = [
         price: 129900,
         stock: 18,
         is_default: true,
-        image_url: "/products/iphone-17-pro.png",
+        image_url: "/images/iphone-17-pro.png",
         emi_plans: [
           {
             _id: "66d89f01-p1",
@@ -85,7 +85,7 @@ const FALLBACK_PRODUCTS = [
         price: 149900,
         stock: 12,
         is_default: false,
-        image_url: "/products/iphone-17-pro.png",
+        image_url: "/images/iphone-17-pro.png",
         emi_plans: [
           {
             _id: "66d89f01-p5",
@@ -126,7 +126,7 @@ const FALLBACK_PRODUCTS = [
       mrp: 139999,
       price: 129999,
       stock: 22,
-      image_url: "/products/samsung-s25-ultra.png"
+      image_url: "/images/samsung-s25-ultra.png"
     },
     variants: [
       {
@@ -139,7 +139,7 @@ const FALLBACK_PRODUCTS = [
         price: 129999,
         stock: 22,
         is_default: true,
-        image_url: "/products/samsung-s25-ultra.png",
+        image_url: "/images/samsung-s25-ultra.png",
         emi_plans: [
           {
             _id: "66d89f02-p1",
@@ -191,7 +191,7 @@ const FALLBACK_PRODUCTS = [
       mrp: 109999,
       price: 99999,
       stock: 20,
-      image_url: "/products/pixel-9-pro.png"
+      image_url: "/images/pixel-9-pro.png"
     },
     variants: [
       {
@@ -204,7 +204,7 @@ const FALLBACK_PRODUCTS = [
         price: 99999,
         stock: 20,
         is_default: true,
-        image_url: "/products/pixel-9-pro.png",
+        image_url: "/images/pixel-9-pro.png",
         emi_plans: [
           {
             _id: "66d89f03-p1",
@@ -245,7 +245,7 @@ const FALLBACK_PRODUCTS = [
       mrp: 69999,
       price: 64999,
       stock: 25,
-      image_url: "/products/oneplus-13.png"
+      image_url: "/images/oneplus-13.png"
     },
     variants: [
       {
@@ -258,7 +258,7 @@ const FALLBACK_PRODUCTS = [
         price: 64999,
         stock: 25,
         is_default: true,
-        image_url: "/products/oneplus-13.png",
+        image_url: "/images/oneplus-13.png",
         emi_plans: [
           {
             _id: "66d89f04-p1",
