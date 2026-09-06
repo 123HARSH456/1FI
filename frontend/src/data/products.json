@@ -1,0 +1,1652 @@
+[
+  {
+    "_id": "prod_1",
+    "name": "Apple iPhone 17 Pro",
+    "slug": "apple-iphone-17-pro",
+    "brand": "Apple",
+    "category": "Smartphones",
+    "badge": "1Fi Choice",
+    "rating": 4.9,
+    "review_count": 342,
+    "description": "The pinnacle of smartphone innovation featuring the A19 Pro bionic chip, next-gen grade 5 titanium chassis, 48MP periscope telephoto camera system, and all-day battery life with 1Fi exclusive mutual fund cashback perks.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/apple/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "A19 Pro Chip with 6-core GPU",
+      "Super Retina XDR 120Hz ProMotion Display",
+      "Triple 48MP Camera system with 5x optical zoom",
+      "Action Button & Ceramic Shield gen 2"
+    ],
+    "variants": [
+      {
+        "_id": "prod_1_v1",
+        "variant_name": "iPhone 17 Pro 256 GB",
+        "storage": "2026 · 256",
+        "color": "Sunset Gold",
+        "color_code": "#E37A3F",
+        "mrp": 134900,
+        "price": 125900,
+        "stock": 18,
+        "is_default": true,
+        "image_url": "/images/iphone-17-pro.png",
+        "gallery": [
+          "/images/iphone-17-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_1_v1_plan_1",
+            "plan_label": "3 months · 10% p.a.",
+            "tenure_months": 3,
+            "interest_rate": 10,
+            "monthly_amount": 42668,
+            "cashback_amount": 1500,
+            "cashback_note": "₹1,500 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_1_v1_plan_2",
+            "plan_label": "6 months · 10% p.a.",
+            "tenure_months": 6,
+            "interest_rate": 10,
+            "monthly_amount": 21600,
+            "cashback_amount": 3500,
+            "cashback_note": "₹3,500 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      },
+      {
+        "_id": "prod_1_v2",
+        "variant_name": "iPhone 17 Pro 512 GB",
+        "storage": "2026 · 512 GB",
+        "color": "Sunset Gold",
+        "color_code": "#E37A3F",
+        "mrp": 144900,
+        "price": 134900,
+        "stock": 12,
+        "is_default": false,
+        "image_url": "/images/iphone-17-pro.png",
+        "gallery": [
+          "/images/iphone-17-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_1_v2_plan_1",
+            "plan_label": "3 months · 10% p.a.",
+            "tenure_months": 3,
+            "interest_rate": 10,
+            "monthly_amount": 45720,
+            "cashback_amount": 2000,
+            "cashback_note": "₹2,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_1_v2_plan_2",
+            "plan_label": "6 months · 10% p.a.",
+            "tenure_months": 6,
+            "interest_rate": 10,
+            "monthly_amount": 23145,
+            "cashback_amount": 4000,
+            "cashback_note": "₹4,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_2",
+    "name": "Samsung Galaxy S25 Ultra",
+    "slug": "samsung-galaxy-s25-ultra",
+    "brand": "Samsung",
+    "category": "Smartphones",
+    "badge": "Popular",
+    "rating": 4.8,
+    "review_count": 289,
+    "description": "Unleash your productivity with Galaxy AI, Snapdragon 8 Elite chipset, integrated S-Pen, and a groundbreaking 200MP camera system in a titanium frame. Backed by 1Fi Mutual Fund wealth cashback.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/samsung/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "Snapdragon 8 Elite for Galaxy (3nm)",
+      "Built-in S Pen stylus with Air Actions",
+      "200MP Quad Telephoto Camera with AI Nightography",
+      "Dynamic AMOLED 2X 120Hz Anti-Reflective Display"
+    ],
+    "variants": [
+      {
+        "_id": "prod_2_v1",
+        "variant_name": "256GB - Titanium Sand",
+        "storage": "256GB",
+        "color": "Titanium Sand",
+        "color_code": "#D8CEBE",
+        "mrp": 139999,
+        "price": 129999,
+        "stock": 22,
+        "is_default": true,
+        "image_url": "/images/samsung-s25-ultra.png",
+        "gallery": [
+          "/images/samsung-s25-ultra.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_2_v1_plan_1",
+            "plan_label": "3 Months 0% Interest",
+            "tenure_months": 3,
+            "interest_rate": 0,
+            "monthly_amount": 43333,
+            "cashback_amount": 1800,
+            "cashback_note": "₹1,800 invested in HDFC Balanced Advantage Fund",
+            "fund_backed": true,
+            "fund_name": "HDFC Balanced Advantage Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_2_v1_plan_2",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 21666,
+            "cashback_amount": 4000,
+            "cashback_note": "₹4,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_2_v1_plan_3",
+            "plan_label": "12 Months Smart Wealth",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 11360,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          },
+          {
+            "_id": "prod_2_v1_plan_4",
+            "plan_label": "24 Months Ultra Low EMI",
+            "tenure_months": 24,
+            "interest_rate": 10.5,
+            "monthly_amount": 6155,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 499
+          }
+        ]
+      },
+      {
+        "_id": "prod_2_v2",
+        "variant_name": "512GB - Titanium Sand",
+        "storage": "512GB",
+        "color": "Titanium Sand",
+        "color_code": "#D8CEBE",
+        "mrp": 159999,
+        "price": 149999,
+        "stock": 10,
+        "is_default": false,
+        "image_url": "/images/samsung-s25-ultra.png",
+        "gallery": [
+          "/images/samsung-s25-ultra.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_2_v2_plan_1",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 25000,
+            "cashback_amount": 4500,
+            "cashback_note": "₹4,500 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_2_v2_plan_2",
+            "plan_label": "12 Months Smart Wealth",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 13106,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_3",
+    "name": "Google Pixel 9 Pro",
+    "slug": "google-pixel-9-pro",
+    "brand": "Google",
+    "category": "Smartphones",
+    "badge": "Best Camera",
+    "rating": 4.8,
+    "review_count": 215,
+    "description": "Experience pure Google AI with Gemini Nano built-in, the revolutionary Tensor G4 processor, unmatched computational photography, and 7 years of OS updates with mutual fund reward investments.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/pixel/",
+      "frameCount": 30,
+      "zoom": 1.08
+    },
+    "features": [
+      "Google Tensor G4 with Titan M2 security",
+      "Pro 50MP triple camera with 30x Super Res Zoom",
+      "Gemini Nano & AI Add Me photo features",
+      "Super Actua 1-120Hz LTPO OLED Display"
+    ],
+    "variants": [
+      {
+        "_id": "prod_3_v1",
+        "variant_name": "128GB - Porcelain White",
+        "storage": "128GB",
+        "color": "Porcelain White",
+        "color_code": "#F2EFE9",
+        "mrp": 109999,
+        "price": 99999,
+        "stock": 20,
+        "is_default": true,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_3_v1_plan_1",
+            "plan_label": "3 Months 0% No Cost EMI",
+            "tenure_months": 3,
+            "interest_rate": 0,
+            "monthly_amount": 33333,
+            "cashback_amount": 1500,
+            "cashback_note": "₹1,500 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_3_v1_plan_2",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 16666,
+            "cashback_amount": 3000,
+            "cashback_note": "₹3,000 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_3_v1_plan_3",
+            "plan_label": "12 Months Balanced EMI",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 8740,
+            "cashback_amount": 4500,
+            "cashback_note": "₹4,500 invested in HDFC Top 100 Fund",
+            "fund_backed": true,
+            "fund_name": "HDFC Top 100 Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          },
+          {
+            "_id": "prod_3_v1_plan_4",
+            "plan_label": "24 Months Ultra Low EMI",
+            "tenure_months": 24,
+            "interest_rate": 10.5,
+            "monthly_amount": 4735,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 499
+          }
+        ]
+      },
+      {
+        "_id": "prod_3_v2",
+        "variant_name": "256GB - Porcelain White",
+        "storage": "256GB",
+        "color": "Porcelain White",
+        "color_code": "#F2EFE9",
+        "mrp": 119999,
+        "price": 109999,
+        "stock": 15,
+        "is_default": false,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_3_v2_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 18333,
+            "cashback_amount": 3500,
+            "cashback_note": "₹3,500 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_3_v2_plan_2",
+            "plan_label": "12 Months Balanced EMI",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 9610,
+            "cashback_amount": 4800,
+            "cashback_note": "₹4,800 invested in HDFC Top 100 Fund",
+            "fund_backed": true,
+            "fund_name": "HDFC Top 100 Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_4",
+    "name": "OnePlus 13 5G",
+    "slug": "oneplus-13-5g",
+    "brand": "OnePlus",
+    "category": "Smartphones",
+    "badge": "Value Flagship",
+    "rating": 4.7,
+    "review_count": 178,
+    "description": "Ultra-fast performance with Snapdragon 8 Elite, Hasselblad 4th Gen camera system, 6000mAh silicon-carbon battery, and 100W SUPERVOOC charging. Comes with 1Fi mutual fund wealth perks.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oppo/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Snapdragon 8 Elite Processor",
+      "Hasselblad Camera with 50MP Sony LYT-808 Sensor",
+      "6000mAh Battery with 100W Wired & 50W Wireless Charging",
+      "2K 120Hz Oriental OLED Display"
+    ],
+    "variants": [
+      {
+        "_id": "prod_4_v1",
+        "variant_name": "256GB - Midnight Blue",
+        "storage": "256GB",
+        "color": "Midnight Blue",
+        "color_code": "#2B436D",
+        "mrp": 69999,
+        "price": 64999,
+        "stock": 25,
+        "is_default": true,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_4_v1_plan_1",
+            "plan_label": "3 Months 0% No Cost EMI",
+            "tenure_months": 3,
+            "interest_rate": 0,
+            "monthly_amount": 21666,
+            "cashback_amount": 1200,
+            "cashback_note": "₹1,200 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_4_v1_plan_2",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 10833,
+            "cashback_amount": 2500,
+            "cashback_note": "₹2,500 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_4_v1_plan_3",
+            "plan_label": "12 Months Balanced EMI",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 5680,
+            "cashback_amount": 3500,
+            "cashback_note": "₹3,500 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 199
+          }
+        ]
+      },
+      {
+        "_id": "prod_4_v2",
+        "variant_name": "512GB - Midnight Blue",
+        "storage": "512GB",
+        "color": "Midnight Blue",
+        "color_code": "#2B436D",
+        "mrp": 79999,
+        "price": 74999,
+        "stock": 18,
+        "is_default": false,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_4_v2_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 12500,
+            "cashback_amount": 3000,
+            "cashback_note": "₹3,000 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_5",
+    "name": "Apple iPhone 16",
+    "slug": "apple-iphone-16",
+    "brand": "Apple",
+    "category": "Smartphones",
+    "badge": "New Generation",
+    "rating": 4.8,
+    "review_count": 210,
+    "description": "Featuring the A18 chip, advanced Camera Control button, 48MP Fusion camera system, and ultra-long battery life with exclusive 1Fi mutual fund rewards.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/apple/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "A18 Bionic Chip with 5-core GPU",
+      "Camera Control button for instant capture",
+      "48MP Fusion Camera with 2x Telephoto",
+      "Aerospace-grade aluminum enclosure"
+    ],
+    "variants": [
+      {
+        "_id": "prod_5_v1",
+        "variant_name": "128GB - Ultramarine Blue",
+        "storage": "128GB",
+        "color": "Ultramarine",
+        "color_code": "#3B5A96",
+        "mrp": 89900,
+        "price": 79900,
+        "stock": 22,
+        "is_default": true,
+        "image_url": "/images/iphone-17-pro.png",
+        "gallery": [
+          "/images/iphone-17-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_5_v1_plan_1",
+            "plan_label": "3 Months 0% No Cost EMI",
+            "tenure_months": 3,
+            "interest_rate": 0,
+            "monthly_amount": 26633,
+            "cashback_amount": 1200,
+            "cashback_note": "₹1,200 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_5_v1_plan_2",
+            "plan_label": "6 Months 0% Smart Wealth",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 13316,
+            "cashback_amount": 2500,
+            "cashback_note": "₹2,500 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_6",
+    "name": "Apple iPhone 16 Pro Max",
+    "slug": "apple-iphone-16-pro-max",
+    "brand": "Apple",
+    "category": "Smartphones",
+    "badge": "Top Flagship",
+    "rating": 4.9,
+    "review_count": 312,
+    "description": "Massive 6.9-inch Super Retina XDR display, A18 Pro silicon, 5x telephoto optical zoom, and 1Fi folio rewards on every monthly instalment.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/apple/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "A18 Pro Processor with hardware ray tracing",
+      "6.9-inch Super Retina XDR ProMotion Display",
+      "5x Telephoto Optical Zoom camera",
+      "Grade 5 Titanium design"
+    ],
+    "variants": [
+      {
+        "_id": "prod_6_v1",
+        "variant_name": "256GB - Desert Titanium",
+        "storage": "256GB",
+        "color": "Desert Titanium",
+        "color_code": "#B8A38E",
+        "mrp": 159900,
+        "price": 144900,
+        "stock": 14,
+        "is_default": true,
+        "image_url": "/images/iphone-17-pro.png",
+        "gallery": [
+          "/images/iphone-17-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_6_v1_plan_1",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 24150,
+            "cashback_amount": 4000,
+            "cashback_note": "₹4,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_7",
+    "name": "Samsung Galaxy S24 FE",
+    "slug": "samsung-galaxy-s24-fe",
+    "brand": "Samsung",
+    "category": "Smartphones",
+    "badge": "Fan Edition",
+    "rating": 4.6,
+    "review_count": 145,
+    "description": "Flagship Galaxy AI capabilities, Exynos 2400e performance, pro-grade triple cameras, and wealth-building 0% EMI plans with 1Fi.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/samsung/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "Galaxy AI photo assist and Live Translate",
+      "6.7-inch Dynamic AMOLED 2X 120Hz display",
+      "50MP primary camera with optical stabilization",
+      "4,700mAh battery with intelligent management"
+    ],
+    "variants": [
+      {
+        "_id": "prod_7_v1",
+        "variant_name": "128GB - Mint Green",
+        "storage": "128GB",
+        "color": "Mint Green",
+        "color_code": "#A3D9C9",
+        "mrp": 69999,
+        "price": 59999,
+        "stock": 30,
+        "is_default": true,
+        "image_url": "/images/samsung-s25-ultra.png",
+        "gallery": [
+          "/images/samsung-s25-ultra.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_7_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 9999,
+            "cashback_amount": 2000,
+            "cashback_note": "₹2,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_8",
+    "name": "Samsung Galaxy Z Fold 6",
+    "slug": "samsung-galaxy-z-fold-6",
+    "brand": "Samsung",
+    "category": "Smartphones",
+    "badge": "Foldable Icon",
+    "rating": 4.8,
+    "review_count": 168,
+    "description": "Ultra-thin, featherlight book-style foldable powered by Galaxy AI, Snapdragon 8 Gen 3, and enhanced Armor Aluminum frame.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/samsung/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "7.6-inch Dynamic AMOLED 2X Foldable display",
+      "Snapdragon 8 Gen 3 for Galaxy",
+      "Enhanced dual-rail Flex Hinge durability",
+      "Integrated S-Pen compatibility"
+    ],
+    "variants": [
+      {
+        "_id": "prod_8_v1",
+        "variant_name": "256GB - Silver Shadow",
+        "storage": "256GB",
+        "color": "Silver Shadow",
+        "color_code": "#A5A9B4",
+        "mrp": 179999,
+        "price": 164999,
+        "stock": 10,
+        "is_default": true,
+        "image_url": "/images/samsung-s25-ultra.png",
+        "gallery": [
+          "/images/samsung-s25-ultra.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_8_v1_plan_1",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 27499,
+            "cashback_amount": 4500,
+            "cashback_note": "₹4,500 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_9",
+    "name": "Samsung Galaxy Z Flip 6",
+    "slug": "samsung-galaxy-z-flip-6",
+    "brand": "Samsung",
+    "category": "Smartphones",
+    "badge": "Compact Fold",
+    "rating": 4.7,
+    "review_count": 194,
+    "description": "Pocket-perfect clamshell foldable with large interactive FlexWindow, 50MP pro-grade camera, and 1Fi mutual fund cashback rewards.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/samsung/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "3.4-inch Super AMOLED FlexWindow cover display",
+      "50MP wide camera with AI ProVisual Engine",
+      "Vapor chamber cooling in a Flip for the first time",
+      "4,000mAh battery with all-day endurance"
+    ],
+    "variants": [
+      {
+        "_id": "prod_9_v1",
+        "variant_name": "256GB - Blue Shade",
+        "storage": "256GB",
+        "color": "Blue Shade",
+        "color_code": "#5E7D9C",
+        "mrp": 119999,
+        "price": 109999,
+        "stock": 16,
+        "is_default": true,
+        "image_url": "/images/samsung-s25-ultra.png",
+        "gallery": [
+          "/images/samsung-s25-ultra.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_9_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 18333,
+            "cashback_amount": 3200,
+            "cashback_note": "₹3,200 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_10",
+    "name": "Google Pixel 9",
+    "slug": "google-pixel-9",
+    "brand": "Google",
+    "category": "Smartphones",
+    "badge": "AI Powerhouse",
+    "rating": 4.7,
+    "review_count": 182,
+    "description": "Powered by Google Tensor G4, standard-setting 50MP camera system, Gemini Live assistant, and 7 years of Android feature drops.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/pixel/",
+      "frameCount": 30,
+      "zoom": 1.08
+    },
+    "features": [
+      "Google Tensor G4 chip engineered for advanced AI",
+      "6.3-inch Actua OLED 120Hz display",
+      "Advanced dual rear camera with Macro Focus",
+      "All-day battery with Extreme Battery Saver"
+    ],
+    "variants": [
+      {
+        "_id": "prod_10_v1",
+        "variant_name": "128GB - Peony Pink",
+        "storage": "128GB",
+        "color": "Peony Pink",
+        "color_code": "#D97B8F",
+        "mrp": 89999,
+        "price": 79999,
+        "stock": 25,
+        "is_default": true,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_10_v1_plan_1",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 13333,
+            "cashback_amount": 2500,
+            "cashback_note": "₹2,500 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_11",
+    "name": "Google Pixel 8a",
+    "slug": "google-pixel-8a",
+    "brand": "Google",
+    "category": "Smartphones",
+    "badge": "Best Budget AI",
+    "rating": 4.6,
+    "review_count": 240,
+    "description": "Incredible camera performance, Tensor G3 silicon, Audio Magic Eraser, and Best Take photo tools at an accessible 0% EMI with 1Fi.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/pixel/",
+      "frameCount": 30,
+      "zoom": 1.08
+    },
+    "features": [
+      "Google Tensor G3 processor",
+      "6.1-inch 120Hz Actua display with Gorilla Glass 3",
+      "64MP main camera with 4K video recording",
+      "Titan M2 security chip and VPN by Google"
+    ],
+    "variants": [
+      {
+        "_id": "prod_11_v1",
+        "variant_name": "128GB - Bay Blue",
+        "storage": "128GB",
+        "color": "Bay Blue",
+        "color_code": "#6E9CC7",
+        "mrp": 52999,
+        "price": 49999,
+        "stock": 35,
+        "is_default": true,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_11_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 8333,
+            "cashback_amount": 1500,
+            "cashback_note": "₹1,500 invested in HDFC Top 100 Fund",
+            "fund_backed": true,
+            "fund_name": "HDFC Top 100 Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_12",
+    "name": "OnePlus 12",
+    "slug": "oneplus-12",
+    "brand": "OnePlus",
+    "category": "Smartphones",
+    "badge": "Performance King",
+    "rating": 4.8,
+    "review_count": 220,
+    "description": "Snapdragon 8 Gen 3 speed, 4th Gen Hasselblad camera, 5400mAh battery, and 100W SUPERVOOC charging backed by mutual fund investments.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oneplus/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Snapdragon 8 Gen 3 with Dual Cryo-velocity VC",
+      "2K 120Hz ProXDR Display with Aqua Touch",
+      "Hasselblad Camera with 64MP periscope telephoto",
+      "100W Wired and 50W AIRVOOC Wireless Charging"
+    ],
+    "variants": [
+      {
+        "_id": "prod_12_v1",
+        "variant_name": "256GB - Flowy Emerald",
+        "storage": "256GB",
+        "color": "Flowy Emerald",
+        "color_code": "#2E5C4E",
+        "mrp": 69999,
+        "price": 64999,
+        "stock": 20,
+        "is_default": true,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_12_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 10833,
+            "cashback_amount": 2200,
+            "cashback_note": "₹2,200 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_13",
+    "name": "OnePlus Open",
+    "slug": "oneplus-open",
+    "brand": "OnePlus",
+    "category": "Smartphones",
+    "badge": "Masterpiece Fold",
+    "rating": 4.9,
+    "review_count": 130,
+    "description": "Groundbreaking lightweight foldable with Open Canvas multitasking, Hasselblad cameras with Sony LYT-T808 sensor, and 1Fi cashback perks.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oneplus/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Dual 2K 120Hz Fluid AMOLED Displays",
+      "Open Canvas spatial multitasking software",
+      "Triple 48MP+64MP+48MP Hasselblad camera system",
+      "Ultra-thin titanium and carbon fiber architecture"
+    ],
+    "variants": [
+      {
+        "_id": "prod_13_v1",
+        "variant_name": "512GB - Emerald Dusk",
+        "storage": "512GB",
+        "color": "Emerald Dusk",
+        "color_code": "#2A453B",
+        "mrp": 149999,
+        "price": 139999,
+        "stock": 8,
+        "is_default": true,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_13_v1_plan_1",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 23333,
+            "cashback_amount": 3500,
+            "cashback_note": "₹3,500 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_14",
+    "name": "OnePlus Nord 4",
+    "slug": "oneplus-nord-4",
+    "brand": "OnePlus",
+    "category": "Smartphones",
+    "badge": "All-Metal Unibody",
+    "rating": 4.6,
+    "review_count": 275,
+    "description": "Slim metal unibody design, Snapdragon 7+ Gen 3 powerhouse, 5500mAh battery, and 100W SUPERVOOC charging with 0% 1Fi financing.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oneplus/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Precision-milled all-metal unibody chassis",
+      "Snapdragon 7+ Gen 3 chipset with AI intelligence",
+      "5500mAh mega battery with 100W fast charge",
+      "6.74-inch 1.5K 120Hz AMOLED display"
+    ],
+    "variants": [
+      {
+        "_id": "prod_14_v1",
+        "variant_name": "128GB - Mercurial Silver",
+        "storage": "128GB",
+        "color": "Mercurial Silver",
+        "color_code": "#CFD3D8",
+        "mrp": 32999,
+        "price": 29999,
+        "stock": 40,
+        "is_default": true,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_14_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 4999,
+            "cashback_amount": 1000,
+            "cashback_note": "₹1,000 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_15",
+    "name": "Xiaomi 14 Ultra",
+    "slug": "xiaomi-14-ultra",
+    "brand": "Xiaomi",
+    "category": "Smartphones",
+    "badge": "Leica Optics",
+    "rating": 4.8,
+    "review_count": 160,
+    "description": "Leica quad-camera system with 1-inch LYT-900 sensor, stepless variable aperture, Snapdragon 8 Gen 3, and 1Fi mutual fund cashback rewards.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oppo/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Leica Summilux quad-camera with 1-inch Sony LYT-900 sensor",
+      "WQHD+ 120Hz LTPO AMOLED display with 3000 nits brightness",
+      "Snapdragon 8 Gen 3 with IceLoop liquid cooling",
+      "Xiaomi Guardian Structure with vegan leather back"
+    ],
+    "variants": [
+      {
+        "_id": "prod_15_v1",
+        "variant_name": "512GB - Titanium Black",
+        "storage": "512GB",
+        "color": "Titanium Black",
+        "color_code": "#1F2022",
+        "mrp": 109999,
+        "price": 99999,
+        "stock": 12,
+        "is_default": true,
+        "image_url": "/images/oppo360/frame-01.png",
+        "gallery": [
+          "/images/oppo360/frame-01.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_15_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 16666,
+            "cashback_amount": 3000,
+            "cashback_note": "₹3,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_16",
+    "name": "Xiaomi 14",
+    "slug": "xiaomi-14",
+    "brand": "Xiaomi",
+    "category": "Smartphones",
+    "badge": "Compact Flagship",
+    "rating": 4.7,
+    "review_count": 190,
+    "description": "Ergonomic 6.36-inch compact powerhouse with Leica triple cameras, Snapdragon 8 Gen 3, 90W HyperCharge, and 1Fi folio perks.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oppo/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Compact 6.36-inch 120Hz CrystalRes AMOLED display",
+      "Leica 50MP Light Hunter 900 main camera",
+      "Snapdragon 8 Gen 3 processing platform",
+      "90W wired & 50W wireless HyperCharge"
+    ],
+    "variants": [
+      {
+        "_id": "prod_16_v1",
+        "variant_name": "256GB - Jade Green",
+        "storage": "256GB",
+        "color": "Jade Green",
+        "color_code": "#4A6356",
+        "mrp": 79999,
+        "price": 69999,
+        "stock": 22,
+        "is_default": true,
+        "image_url": "/images/oppo360/frame-01.png",
+        "gallery": [
+          "/images/oppo360/frame-01.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_16_v1_plan_1",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 11666,
+            "cashback_amount": 2200,
+            "cashback_note": "₹2,200 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_17",
+    "name": "Redmi Note 13 Pro+",
+    "slug": "redmi-note-13-pro-plus",
+    "brand": "Xiaomi",
+    "category": "Smartphones",
+    "badge": "200MP Curved",
+    "rating": 4.6,
+    "review_count": 340,
+    "description": "200MP OIS camera, 3D curved 1.5K AMOLED display, IP68 water resistance, and 120W HyperCharge with mutual fund cashback.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oppo/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "200MP Ultra-Clear Camera with OIS and 4x lossless zoom",
+      "IP68 dust and water resistance",
+      "120W HyperCharge: 100% battery in 19 minutes",
+      "MediaTek Dimensity 7200-Ultra 4nm chipset"
+    ],
+    "variants": [
+      {
+        "_id": "prod_17_v1",
+        "variant_name": "256GB - Fusion Purple",
+        "storage": "256GB",
+        "color": "Fusion Purple",
+        "color_code": "#722EDC",
+        "mrp": 35999,
+        "price": 31999,
+        "stock": 35,
+        "is_default": true,
+        "image_url": "/images/oppo360/frame-01.png",
+        "gallery": [
+          "/images/oppo360/frame-01.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_17_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 5333,
+            "cashback_amount": 1100,
+            "cashback_note": "₹1,100 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_18",
+    "name": "Nothing Phone (2)",
+    "slug": "nothing-phone-2",
+    "brand": "Nothing",
+    "category": "Smartphones",
+    "badge": "Glyph Interface",
+    "rating": 4.7,
+    "review_count": 260,
+    "description": "Iconic Glyph Interface with customizable lighting patterns, Nothing OS 2.5, Snapdragon 8+ Gen 1, and 1Fi investment cashbacks.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/pixel/",
+      "frameCount": 30,
+      "zoom": 1.08
+    },
+    "features": [
+      "Unique transparent back with multi-zone Glyph lighting",
+      "Snapdragon 8+ Gen 1 flagship chipset",
+      "Dual 50MP Sony IMX890 cameras with 4K 60fps recording",
+      "6.7-inch flexible LTPO OLED display with 1-120Hz refresh"
+    ],
+    "variants": [
+      {
+        "_id": "prod_18_v1",
+        "variant_name": "128GB - Dark Grey",
+        "storage": "128GB",
+        "color": "Dark Grey",
+        "color_code": "#33353A",
+        "mrp": 44999,
+        "price": 36999,
+        "stock": 28,
+        "is_default": true,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_18_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 6166,
+            "cashback_amount": 1200,
+            "cashback_note": "₹1,200 invested in HDFC Top 100 Fund",
+            "fund_backed": true,
+            "fund_name": "HDFC Top 100 Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_19",
+    "name": "Nothing Phone (2a) Plus",
+    "slug": "nothing-phone-2a-plus",
+    "brand": "Nothing",
+    "category": "Smartphones",
+    "badge": "Design Innovator",
+    "rating": 4.6,
+    "review_count": 185,
+    "description": "Metallic finish Glyph design, MediaTek Dimensity 7350 Pro 5G, triple 50MP cameras, and 1Fi mutual fund wealth perks.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/pixel/",
+      "frameCount": 30,
+      "zoom": 1.08
+    },
+    "features": [
+      "Custom MediaTek Dimensity 7350 Pro 5G processor",
+      "Triple 50MP camera setup with enhanced portrait algorithm",
+      "Signature Glyph Interface with countdown timer integration",
+      "5,000mAh battery with 50W fast charging"
+    ],
+    "variants": [
+      {
+        "_id": "prod_19_v1",
+        "variant_name": "256GB - Metallic Grey",
+        "storage": "256GB",
+        "color": "Metallic Grey",
+        "color_code": "#4E5259",
+        "mrp": 29999,
+        "price": 27999,
+        "stock": 32,
+        "is_default": true,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_19_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 4666,
+            "cashback_amount": 1000,
+            "cashback_note": "₹1,000 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_20",
+    "name": "CMF Phone 1 by Nothing",
+    "slug": "cmf-phone-1",
+    "brand": "Nothing",
+    "category": "Smartphones",
+    "badge": "Modular Design",
+    "rating": 4.5,
+    "review_count": 310,
+    "description": "Unique modular design with swappable back cases and accessories, MediaTek Dimensity 7300 5G, and 0% interest financing on 1Fi.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/pixel/",
+      "frameCount": 30,
+      "zoom": 1.08
+    },
+    "features": [
+      "Interchangeable case design with modular accessory mount",
+      "MediaTek Dimensity 7300 5G 4nm processor",
+      "6.67-inch Super AMOLED 120Hz display with 2000 nits",
+      "50MP Sony camera with Ultra XDR support"
+    ],
+    "variants": [
+      {
+        "_id": "prod_20_v1",
+        "variant_name": "128GB - Vibrant Orange",
+        "storage": "128GB",
+        "color": "Vibrant Orange",
+        "color_code": "#FF5722",
+        "mrp": 19999,
+        "price": 15999,
+        "stock": 45,
+        "is_default": true,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_20_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 2666,
+            "cashback_amount": 600,
+            "cashback_note": "₹600 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_21",
+    "name": "Motorola Edge 50 Ultra",
+    "slug": "motorola-edge-50-ultra",
+    "brand": "Motorola",
+    "category": "Smartphones",
+    "badge": "Real Wood & AI",
+    "rating": 4.8,
+    "review_count": 140,
+    "description": "Authentic Nordic Wood finish, Snapdragon 8s Gen 3, Pantone validated camera and display, and 125W TurboPower with 1Fi folio rewards.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oppo/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Natural real wood and vegan leather finish options",
+      "Snapdragon 8s Gen 3 with Moto AI features",
+      "Pantone Validated camera system with 64MP periscope",
+      "125W TurboPower wired & 50W wireless charging"
+    ],
+    "variants": [
+      {
+        "_id": "prod_21_v1",
+        "variant_name": "512GB - Nordic Wood",
+        "storage": "512GB",
+        "color": "Nordic Wood",
+        "color_code": "#B28860",
+        "mrp": 64999,
+        "price": 54999,
+        "stock": 15,
+        "is_default": true,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_21_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 9166,
+            "cashback_amount": 1800,
+            "cashback_note": "₹1,800 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_22",
+    "name": "Motorola Razr 50 Ultra",
+    "slug": "motorola-razr-50-ultra",
+    "brand": "Motorola",
+    "category": "Smartphones",
+    "badge": "Mega Cover Screen",
+    "rating": 4.8,
+    "review_count": 120,
+    "description": "Industry's largest 4.0-inch external pOLED display, teardrop hinge with IPX8 water resistance, and Snapdragon 8s Gen 3 with 1Fi cashback.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oppo/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Massive 4.0-inch external 165Hz pOLED cover screen",
+      "6.9-inch internal foldable 165Hz display",
+      "Dual 50MP cameras with Moto AI enhancement",
+      "Snapdragon 8s Gen 3 mobile platform"
+    ],
+    "variants": [
+      {
+        "_id": "prod_22_v1",
+        "variant_name": "512GB - Spring Green",
+        "storage": "512GB",
+        "color": "Spring Green",
+        "color_code": "#688A6E",
+        "mrp": 99999,
+        "price": 89999,
+        "stock": 11,
+        "is_default": true,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_22_v1_plan_1",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 14999,
+            "cashback_amount": 2800,
+            "cashback_note": "₹2,800 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_23",
+    "name": "Motorola Edge 50 Pro",
+    "slug": "motorola-edge-50-pro",
+    "brand": "Motorola",
+    "category": "Smartphones",
+    "badge": "Curved Beauty",
+    "rating": 4.6,
+    "review_count": 210,
+    "description": "Pantone validated true color 1.5K pOLED curved display, 50MP AI camera with telephoto, IP68 underwater protection, and 125W charging.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oppo/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "World's 1st Pantone Validated Display and Camera",
+      "144Hz 6.7-inch 1.5K 3D Curved pOLED screen",
+      "Snapdragon 7 Gen 3 mobile platform",
+      "125W TurboPower charging with 50W wireless"
+    ],
+    "variants": [
+      {
+        "_id": "prod_23_v1",
+        "variant_name": "256GB - Luxe Lavender",
+        "storage": "256GB",
+        "color": "Luxe Lavender",
+        "color_code": "#A399B2",
+        "mrp": 36999,
+        "price": 31999,
+        "stock": 26,
+        "is_default": true,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_23_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 5333,
+            "cashback_amount": 1100,
+            "cashback_note": "₹1,100 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_24",
+    "name": "Apple iPhone 15",
+    "slug": "apple-iphone-15",
+    "brand": "Apple",
+    "category": "Smartphones",
+    "badge": "All-Time Favorite",
+    "rating": 4.8,
+    "review_count": 390,
+    "description": "Dynamic Island, 48MP main camera with 2x telephoto, A16 Bionic chip, USB-C connectivity, and durable color-infused glass back on 0% EMI.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/apple/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "Dynamic Island bubbles up alerts and Live Activities",
+      "48MP Main Camera with 2x Telephoto zoom",
+      "A16 Bionic processor with 5-core GPU",
+      "USB-C connectivity and all-day battery life"
+    ],
+    "variants": [
+      {
+        "_id": "prod_24_v1",
+        "variant_name": "128GB - Pastel Green",
+        "storage": "128GB",
+        "color": "Pastel Green",
+        "color_code": "#D5E2D9",
+        "mrp": 69900,
+        "price": 65900,
+        "stock": 30,
+        "is_default": true,
+        "image_url": "/images/iphone-17-pro.png",
+        "gallery": [
+          "/images/iphone-17-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_24_v1_plan_1",
+            "plan_label": "6 Months 0% Smart Wealth",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 10983,
+            "cashback_amount": 2000,
+            "cashback_note": "₹2,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-purple: #722EDC;
+  --primary-purple-hover: #5F24BD;
+  --primary-purple-dark: #531CAB;
+  --primary-purple-light: #F4EEFF;
+  --primary-purple-subtle: #E8DCFF;
+  --primary-purple-border: #D4B8FF;
+}
+
 @layer base {
   body {
     @apply bg-[#F5F6FA] text-[#151928] font-sans antialiased overflow-x-hidden;
@@ -22,7 +31,7 @@
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6C38FF;
+  background: var(--primary-purple);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -35,11 +44,11 @@
 
 /* 1Fi Signature Gradients */
 .gradient-1fi-purple {
-  background: linear-gradient(135deg, #5318E8 0%, #763DFF 100%);
+  background: linear-gradient(135deg, #5E22B9 0%, #722EDC 100%);
 }
 
 .gradient-1fi-card {
-  background: linear-gradient(135deg, #4A10DC 0%, #6E38FF 60%, #8754FF 100%);
+  background: linear-gradient(135deg, #531CAB 0%, #722EDC 60%, #8A46F0 100%);
 }
 
 .gradient-offer-banner {
@@ -57,6 +66,27 @@
 }
 .card-white-hover:hover {
   transform: translateY(-2px);
-  border-color: #D8C7FF;
-  box-shadow: 0 10px 24px -4px rgba(108, 56, 255, 0.12);
+  border-color: #D4B8FF;
+  box-shadow: 0 10px 24px -4px rgba(114, 46, 220, 0.12);
+}
+
+@keyframes brandScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-brand-scroll {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: brandScroll 26s linear infinite;
+}
+
+.animate-brand-scroll:hover,
+.animate-brand-scroll:active {
+  animation-play-state: paused;
 }

@@ -8,19 +8,19 @@ export default {
     extend: {
       colors: {
         onefi: {
-          primary: '#6C38FF',
-          'primary-hover': '#5824EC',
-          'primary-dark': '#4813DC',
-          'primary-light': '#F3EFFF',
+          primary: '#722EDC',
+          'primary-hover': '#5F24BD',
+          'primary-dark': '#531CAB',
+          'primary-light': '#F4EEFF',
           'primary-subtle': '#E8DCFF',
-          'primary-border': '#D8C7FF',
+          'primary-border': '#D4B8FF',
           purple: {
-            50: '#F7F5FF',
-            100: '#EFEAFF',
-            200: '#DDD4FF',
-            500: '#6C38FF',
-            600: '#5A25E8',
-            700: '#4714D2',
+            50: '#FBF9FF',
+            100: '#F4EEFF',
+            200: '#E8DCFF',
+            500: '#722EDC',
+            600: '#5F24BD',
+            700: '#531CAB',
             900: '#2A0885'
           },
           green: {
@@ -41,8 +41,8 @@ export default {
         display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
       },
       boxShadow: {
-        'onefi-card': '0 4px 20px -2px rgba(108, 56, 255, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04)',
-        'onefi-glow': '0 8px 24px -4px rgba(108, 56, 255, 0.35)',
+        'onefi-card': '0 4px 20px -2px rgba(114, 46, 220, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04)',
+        'onefi-glow': '0 8px 24px -4px rgba(114, 46, 220, 0.35)',
         'onefi-subtle': '0 2px 10px rgba(0, 0, 0, 0.03)',
       }
     },

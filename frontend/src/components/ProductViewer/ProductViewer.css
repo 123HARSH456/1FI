@@ -1,0 +1,85 @@
+/* 360° Product Viewer Styles */
+.product-viewer-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y; /* Crucial: allows native vertical scrolling on mobile */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  cursor: grab;
+  overflow: hidden; /* Prevents transparent 16:9 canvas wings from creating horizontal overflow */
+}
+
+.product-viewer-container.is-dragging {
+  cursor: grabbing;
+}
+
+.product-viewer-container.is-static {
+  cursor: default;
+}
+
+.product-viewer-image {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  background: transparent;
+  transform-origin: center center;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* 360 frames: height 100% overrides 16:9 landscape aspect ratio so the phone fills the vertical card */
+.product-viewer-image.is-360 {
+  height: 100%;
+  width: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Static fallback: preserve natural image constraints */
+.product-viewer-image.is-static {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Subtle 360 Interaction Hint */
+.product-viewer-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(21, 25, 40, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  z-index: 20;
+}
+
+.product-viewer-hint.is-hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(4px);
+  pointer-events: none;
+}

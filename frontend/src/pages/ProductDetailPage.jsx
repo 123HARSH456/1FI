@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { 
   ChevronLeft, 
   Share2, 
-  Store,
-  ArrowRight
+  ChevronUp, 
+  ChevronDown, 
+  Pencil, 
+  ArrowRight,
+  Store
 } from 'lucide-react';
-import VariantSelector from '../components/product/VariantSelector';
-import EMIPlanSelector from '../components/product/EMIPlanSelector';
-import ProductFeatures from '../components/product/ProductFeatures';
 import CheckoutDrawer from '../components/product/CheckoutDrawer';
+import ProductViewer from '../components/ProductViewer/ProductViewer';
 import { fetchProductBySlug, fetchVariantEmiPlans } from '../services/api';
 
 export default function ProductDetailPage({ slug, onBack }) {
@@ -19,6 +20,8 @@ export default function ProductDetailPage({ slug, onBack }) {
   const [error, setError] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [copiedToast, setCopiedToast] = useState(false);
+  const [showVariants, setShowVariants] = useState(true);
+  const [showPlans, setShowPlans] = useState(true);
 
   useEffect(() => {
     const loadDetail = async () => {
@@ -96,7 +99,7 @@ export default function ProductDetailPage({ slug, onBack }) {
         </div>
         <button
           onClick={onBack}
-          className="px-4 py-2 bg-[#6C38FF] text-white rounded-xl text-xs font-bold cursor-pointer"
+          className="px-4 py-2 bg-[#722EDC] text-white rounded-xl text-xs font-bold cursor-pointer"
         >
           &larr; Back to Shop
         </button>
@@ -105,17 +108,22 @@ export default function ProductDetailPage({ slug, onBack }) {
   }
 
   const emiPlans = selectedVariant?.emi_plans || [];
+  const lowestEmi = emiPlans.length > 0 
+    ? Math.min(...emiPlans.map(p => p.monthly_amount))
+    : Math.round((selectedVariant?.price || 0) / 6);
+
+  const displayTitle = product.name.replace(/^Apple\s+/i, '');
 
   return (
-    <div className="flex-1 flex flex-col pb-28 animate-fadeIn bg-[#F5F6FA]">
-      {/* Top sticky header */}
-      <div className="sticky top-[53px] z-30 bg-[#F5F6FA]/95 backdrop-blur-sm px-4 py-3 flex items-center justify-between border-b border-[#EAEFF6]">
+    <div className="flex-1 flex flex-col h-full min-h-0 bg-[#F5F6FA] select-none">
+      {/* 1. Top Header: Pay using 1Fi */}
+      <div className="bg-[#F5F6FA] px-4 py-3 flex items-center justify-between border-b border-[#EAEFF6]/80 shrink-0 z-20">
         <button
           onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-bold text-[#151928] hover:text-[#6C38FF] transition-colors cursor-pointer"
+          className="flex items-center gap-3 text-[#151928] hover:text-[#722EDC] transition-colors cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-          <span>Pay using 1Fi</span>
+          <span className="text-[15px] font-bold">Pay using 1Fi</span>
         </button>
 
         {copiedToast && (
@@ -125,113 +133,227 @@ export default function ProductDetailPage({ slug, onBack }) {
         )}
       </div>
 
-      <div className="p-4 space-y-4">
-        {/* Product Image hero card */}
-        <div className="card-white rounded-3xl p-5 flex flex-col items-center justify-center relative shadow-onefi-subtle">
+      {/* 2. Scrollable Body Content */}
+      <div className="flex-1 overflow-y-auto no-scrollbar p-4 space-y-4">
+        {/* Product Image hero card with top-left brand pill */}
+        <div className="bg-white rounded-[24px] p-5 flex flex-col items-center justify-center relative border border-[#EAEFF6] shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
           <div className="absolute top-4 left-4">
-            <span className="px-3 py-1 rounded-full bg-[#FAFBFD] text-[#151928] font-bold text-xs border border-[#EAEFF6] shadow-sm">
+            <span className="px-3.5 py-1 rounded-full bg-white text-[#151928] font-bold text-xs border border-[#EAEFF6] shadow-sm">
               {product.brand}
             </span>
           </div>
 
-          <div className="w-full h-52 flex items-center justify-center my-2">
-            <img
-              src={selectedVariant?.image_url}
+          <div className="w-full h-[268px] sm:h-[285px] flex items-center justify-center my-1 bg-transparent overflow-hidden">
+            <ProductViewer
+              staticImage={selectedVariant?.image_url ? `${selectedVariant.image_url}?v=2` : ''}
               alt={product.name}
-              className="max-h-full max-w-full object-contain drop-shadow-lg transition-transform duration-300 hover:scale-105"
+              viewer={selectedVariant?.viewer || product.viewer}
+              zoom={selectedVariant?.viewer?.zoom || product.viewer?.zoom || 1.15}
+              hintText="Swipe to rotate 360°"
             />
           </div>
         </div>
 
-        {/* Title and Share */}
+        {/* Product Title and Top Share Button */}
         <div className="flex items-center justify-between px-1">
-          <div>
-            <h1 className="font-display font-black text-xl text-[#151928] tracking-tight">
-              {product.name}
-            </h1>
-            <p className="text-xs text-[#8C93A8] mt-0.5">
-              {selectedVariant?.variant_name}
-            </p>
-          </div>
+          <h1 className="font-display font-extrabold text-[22px] text-[#151928] tracking-tight">
+            {displayTitle}
+          </h1>
 
           <button
             onClick={handleShare}
-            className="w-9 h-9 rounded-full bg-[#F3EFFF] text-[#6C38FF] flex items-center justify-center hover:bg-[#EAE2FF] transition-colors cursor-pointer shrink-0"
+            className="w-10 h-10 rounded-full border border-[#EAEFF6] bg-white flex items-center justify-center text-[#722EDC] shadow-sm hover:border-[#D4B8FF] transition-all cursor-pointer shrink-0"
             title="Share"
+            aria-label="Share product"
           >
-            <Share2 className="w-4 h-4" />
+            <Share2 className="w-4 h-4 text-[#722EDC]" />
           </button>
         </div>
 
-        {/* Variant Selector */}
-        <VariantSelector
-          variants={product.variants}
-          selectedVariant={selectedVariant}
-          onSelectVariant={handleVariantSelect}
-        />
+        {/* SELECT YOUR VARIANT */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between px-1">
+            <span className="text-[10px] font-bold text-[#8C93A8] uppercase tracking-wider">
+              SELECT YOUR VARIANT
+            </span>
+            <button
+              onClick={() => setShowVariants(!showVariants)}
+              className="text-[#8C93A8] hover:text-[#151928] transition-colors cursor-pointer p-0.5"
+              aria-label="Toggle variants"
+            >
+              {showVariants ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            </button>
+          </div>
 
-        {/* EMI Plans Selector */}
-        <EMIPlanSelector
-          emiPlans={emiPlans}
-          selectedPlan={selectedPlan}
-          onSelectPlan={setSelectedPlan}
-          variantPrice={selectedVariant?.price || 0}
-        />
+          {showVariants && (
+            <div className="space-y-2">
+              {product.variants.map((variant) => {
+                const isSelected = selectedVariant?._id === variant._id;
+                return (
+                  <div
+                    key={variant._id}
+                    onClick={() => handleVariantSelect(variant)}
+                    className={`p-3.5 rounded-[18px] cursor-pointer transition-all flex items-center justify-between ${
+                      isSelected
+                        ? 'border-[1.5px] border-[#722EDC] bg-[#FBF9FF]'
+                        : 'border border-[#EAEFF6] bg-white hover:border-[#D4B8FF]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
+                          isSelected ? 'border-[#722EDC]' : 'border-[#D5DAE6]'
+                        }`}
+                      >
+                        {isSelected && <div className="w-2.5 h-2.5 rounded-full bg-[#722EDC]"></div>}
+                      </div>
 
-        {/* Product Overview & Features */}
-        <ProductFeatures
-          description={product.description}
-          features={product.features}
-        />
+                      <div>
+                        <h4 className="text-sm font-bold text-[#151928] leading-tight">
+                          {variant.storage || variant.variant_name}
+                        </h4>
+                        {isSelected && variant.variant_name && (
+                          <p className="text-xs text-[#8C93A8] mt-0.5 leading-tight">
+                            {variant.variant_name}
+                          </p>
+                        )}
+                      </div>
+                    </div>
 
-        {/* Merchant Partner Info */}
-        <div className="space-y-1.5 px-1">
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#8C93A8]">
-            Fulfillment Partner
-          </span>
-          <div className="card-white rounded-2xl p-3 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-[#F3EFFF] text-[#6C38FF] flex items-center justify-center font-bold text-xs">
-                <Store className="w-4 h-4" />
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-[#151928]">1Fi Verified Merchant</h4>
-                <p className="text-[10px] text-[#8C93A8]">Direct Dispatch · Authorized Brand Partner</p>
-              </div>
+                    <div className="text-right">
+                      <span className="font-display font-extrabold text-sm sm:text-base text-[#151928]">
+                        ₹{variant.price?.toLocaleString('en-IN')}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <span className="text-[10px] font-bold text-[#008C62] bg-[#E6F9F3] px-2 py-0.5 rounded-full">
-              Verified
+          )}
+        </div>
+
+        {/* SUGGESTED AMOUNT */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between px-1">
+            <span className="text-[10px] font-bold text-[#8C93A8] uppercase tracking-wider">
+              SUGGESTED AMOUNT
+            </span>
+            <span className="text-[11px] text-[#8C93A8]">
+              Edit if paying different amount
             </span>
           </div>
-        </div>
-      </div>
 
-      {/* Sticky Bottom Bar with Selected EMI & CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-[#EAEFF6] px-4 py-3 shadow-[0_-4px_25px_rgba(0,0,0,0.06)]">
-        <div className="max-w-lg mx-auto flex items-center justify-between gap-4">
-          <div>
-            <span className="text-[10px] text-[#8C93A8] uppercase tracking-wider block">
-              {selectedPlan ? `${selectedPlan.tenure_months}M EMI Plan` : 'Selected Price'}
-            </span>
-            <div className="flex items-baseline gap-1">
-              <span className="font-display font-black text-xl text-[#6C38FF]">
-                ₹{selectedPlan?.monthly_amount?.toLocaleString('en-IN') || selectedVariant?.price?.toLocaleString('en-IN')}
+          <div className="bg-white rounded-[20px] p-4 border border-[#EAEFF6] shadow-[0_4px_18px_-2px_rgba(21,25,40,0.03)] space-y-3">
+            {/* Amount & Pencil icon */}
+            <div className="flex items-center justify-between">
+              <span className="font-display font-extrabold text-[24px] text-[#151928] tracking-tight">
+                ₹ {selectedVariant?.price?.toLocaleString('en-IN')}
               </span>
-              <span className="text-xs text-[#8C93A8]">/mo</span>
+              <button
+                className="p-1 text-[#8C93A8] hover:text-[#722EDC] transition-colors cursor-pointer"
+                title="Edit amount"
+                aria-label="Edit amount"
+              >
+                <Pencil className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Starts at & Expandable plans dropdown */}
+            <div className="pt-3 border-t border-[#F0F2F8]">
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-[#8C93A8]">
+                  Starts at <strong className="text-[#151928] font-bold">₹{lowestEmi.toLocaleString('en-IN')}/mo</strong>
+                </span>
+
+                <button
+                  onClick={() => setShowPlans(!showPlans)}
+                  className="text-xs font-bold text-[#722EDC] flex items-center gap-1 cursor-pointer hover:underline"
+                >
+                  <span>{showPlans ? 'Hide plans' : 'View plans'}</span>
+                  {showPlans ? <ChevronUp className="w-3.5 h-3.5 stroke-[2.5]" /> : <ChevronDown className="w-3.5 h-3.5 stroke-[2.5]" />}
+                </button>
+              </div>
+
+              {showPlans && (
+                <div className="space-y-2.5 pt-3 mt-2 border-t border-[#F0F2F8]">
+                  {emiPlans.map((plan, idx) => {
+                    const isSelected = selectedPlan?._id === plan._id || 
+                      (selectedPlan?.tenure_months === plan.tenure_months && selectedPlan?.monthly_amount === plan.monthly_amount);
+
+                    return (
+                      <div
+                        key={idx}
+                        onClick={() => setSelectedPlan(plan)}
+                        className={`flex items-center justify-between py-1 px-1 rounded-lg cursor-pointer transition-colors ${
+                          isSelected ? 'bg-[#FBF9FF]' : 'hover:bg-slate-50'
+                        }`}
+                      >
+                        <span className={`text-xs ${isSelected ? 'font-semibold text-[#722EDC]' : 'text-[#6A7389]'}`}>
+                          {plan.tenure_months} months · {plan.interest_rate > 0 ? `${plan.interest_rate}% p.a.` : '10% p.a.'}
+                        </span>
+                        <span className="text-xs sm:text-sm font-bold text-[#151928]">
+                          ₹{plan.monthly_amount?.toLocaleString('en-IN')}{' '}
+                          <span className="text-[11px] text-[#8C93A8] font-normal">/mo</span>
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
+        </div>
 
-          <button
-            onClick={() => setIsDrawerOpen(true)}
-            className="flex-1 max-w-[220px] py-3.5 px-4 rounded-2xl gradient-1fi-purple hover:brightness-110 text-white font-display font-extrabold text-sm shadow-onefi-glow flex items-center justify-center gap-2 transition-all cursor-pointer"
-          >
-            <span>Proceed to Pay</span>
-            <ArrowRight className="w-4 h-4 stroke-[3]" />
-          </button>
+        {/* PAYING TO */}
+        <div className="space-y-2">
+          <span className="text-[10px] font-bold text-[#8C93A8] uppercase tracking-wider px-1 block">
+            PAYING TO
+          </span>
+
+          <div className="bg-white rounded-2xl p-3 border border-[#EAEFF6] shadow-sm flex items-center gap-3">
+            <div className="w-12 h-12 rounded-xl bg-white border border-[#EAEFF6] shadow-sm flex items-center justify-center p-2 shrink-0">
+              {product.brand === 'Apple' ? (
+                <span className="text-2xl font-bold text-black select-none"></span>
+              ) : product.brand === 'Samsung' ? (
+                <span className="text-[10px] font-extrabold text-black">SAMSUNG</span>
+              ) : (
+                <Store className="w-5 h-5 text-[#722EDC]" />
+              )}
+            </div>
+
+            <div>
+              <h4 className="text-xs sm:text-sm font-bold text-[#151928]">
+                {product.brand === 'Apple' ? 'Apple Store' : `${product.brand} Store`}
+              </h4>
+              <p className="text-[10px] sm:text-[10.5px] text-[#8C93A8] leading-tight line-clamp-2 mt-0.5">
+                GOOD EARTH CITY CENTER, GF-31, Pocket H, Nirvana, Sector 50, Gurugram, Fatehpur, Haryana 122018, Gudgaon
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Checkout Drawer Bottom Sheet */}
+      {/* 3. Bottom Sticky Action Bar */}
+      <div className="bg-[#F5F6FA]/95 backdrop-blur-md border-t border-[#EAEFF6] p-4 flex items-center gap-3 shrink-0 z-20">
+        <button
+          onClick={handleShare}
+          className="w-12 h-12 rounded-full border border-[#D4B8FF] bg-white flex items-center justify-center text-[#722EDC] shadow-sm hover:bg-[#FBF9FF] transition-all cursor-pointer shrink-0"
+          title="Share"
+          aria-label="Share"
+        >
+          <Share2 className="w-5 h-5 text-[#722EDC]" />
+        </button>
+
+        <button
+          onClick={() => setIsDrawerOpen(true)}
+          className="flex-1 h-12 rounded-full bg-[#722EDC] hover:bg-[#5F24BD] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-onefi-glow cursor-pointer transition-all"
+        >
+          <span>Continue</span>
+          <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+        </button>
+      </div>
+
+      {/* Checkout Drawer for Payment Confirmation */}
       {selectedVariant && selectedPlan && (
         <CheckoutDrawer
           isOpen={isDrawerOpen}

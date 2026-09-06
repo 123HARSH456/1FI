@@ -99,11 +99,17 @@ export default function CheckoutDrawer({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+    <div 
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm animate-fadeIn"
+      onClick={onClose}
+    >
       <div 
-        className="w-full max-w-lg bg-white border-t sm:border border-[#EAEFF6] rounded-t-[32px] sm:rounded-3xl max-h-[90vh] overflow-y-auto shadow-2xl p-5 sm:p-6 space-y-4 animate-fadeIn relative text-[#151928]"
+        className="w-full max-h-[90%] bg-white border-t border-[#EAEFF6] rounded-t-[32px] overflow-y-auto no-scrollbar shadow-2xl p-4 sm:p-5 space-y-4 animate-fadeIn relative text-[#151928]"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Mobile drawer handle */}
+        <div className="w-10 h-1 bg-[#D5DAE6] rounded-full mx-auto -mt-1 mb-1.5"></div>
+
         <div className="flex items-center justify-between pb-3 border-b border-[#F0F2F8]">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl gradient-1fi-purple flex items-center justify-center text-white font-bold text-xs shadow-sm">
@@ -138,7 +144,7 @@ export default function CheckoutDrawer({
                 Order Placed Successfully!
               </h4>
               <p className="text-xs text-[#8C93A8] mt-1">
-                Application ID: <span className="font-mono font-bold text-[#6C38FF]">{successOrder.order_id}</span>
+                Application ID: <span className="font-mono font-bold text-[#722EDC]">{successOrder.order_id}</span>
               </p>
             </div>
 
@@ -162,7 +168,7 @@ export default function CheckoutDrawer({
               </div>
               <div className="flex justify-between">
                 <span className="text-[#8C93A8]">Monthly EMI:</span>
-                <span className="font-bold text-[#6C38FF]">₹{successOrder.monthly_emi?.toLocaleString('en-IN')}/mo</span>
+                <span className="font-bold text-[#722EDC]">₹{successOrder.monthly_emi?.toLocaleString('en-IN')}/mo</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-[#8C93A8]">Tenure:</span>
@@ -185,16 +191,16 @@ export default function CheckoutDrawer({
           <div className="space-y-3.5">
             <div className="p-3 rounded-2xl bg-[#F8FAFC] border border-[#EAEFF6] flex items-center gap-3">
               <img 
-                src={variant.image_url} 
+                src={variant.image_url ? `${variant.image_url}?v=2` : ''} 
                 alt={product.name} 
-                className="w-12 h-12 object-contain rounded-xl bg-white p-1 shrink-0 border border-[#EAEFF6]" 
+                className="w-12 h-12 object-contain shrink-0" 
               />
               <div className="flex-1 min-w-0">
                 <h4 className="font-display font-bold text-sm text-[#151928] truncate">{product.name}</h4>
                 <p className="text-[11px] text-[#8C93A8]">{variant.variant_name}</p>
                 <div className="flex items-center gap-2 mt-0.5">
                   <span className="font-bold text-xs text-[#151928]">₹{variant.price?.toLocaleString('en-IN')}</span>
-                  <span className="text-[10px] text-[#6C38FF] font-bold bg-[#F3EFFF] px-1.5 py-0.5 rounded">
+                  <span className="text-[10px] text-[#722EDC] font-bold bg-[#F4EEFF] px-1.5 py-0.5 rounded">
                     {plan.tenure_months}M @ ₹{plan.monthly_amount?.toLocaleString('en-IN')}/mo
                   </span>
                 </div>
@@ -218,7 +224,7 @@ export default function CheckoutDrawer({
               </div>
               <div className="pt-2 border-t border-[#EAEFF6] flex justify-between font-bold text-sm">
                 <span className="text-[#151928]">Monthly EMI</span>
-                <span className="text-[#6C38FF]">₹{plan.monthly_amount?.toLocaleString('en-IN')}/mo x {plan.tenure_months}</span>
+                <span className="text-[#722EDC]">₹{plan.monthly_amount?.toLocaleString('en-IN')}/mo x {plan.tenure_months}</span>
               </div>
             </div>
 
@@ -247,7 +253,7 @@ export default function CheckoutDrawer({
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="10-digit mobile"
-                    className="w-full bg-[#F8FAFC] border border-[#D5DAE6] rounded-xl px-3 py-2 text-xs text-[#151928] outline-none focus:border-[#6C38FF]"
+                    className="w-full bg-[#F8FAFC] border border-[#D5DAE6] rounded-xl px-3 py-2 text-xs text-[#151928] outline-none focus:border-[#722EDC]"
                   />
                 </div>
                 <div>
@@ -258,7 +264,7 @@ export default function CheckoutDrawer({
                     value={pan}
                     onChange={(e) => setPan(e.target.value.toUpperCase())}
                     placeholder="ABCDE1234F"
-                    className="w-full bg-[#F8FAFC] border border-[#D5DAE6] rounded-xl px-3 py-2 text-xs text-[#151928] uppercase outline-none focus:border-[#6C38FF]"
+                    className="w-full bg-[#F8FAFC] border border-[#D5DAE6] rounded-xl px-3 py-2 text-xs text-[#151928] uppercase outline-none focus:border-[#722EDC]"
                   />
                 </div>
               </div>

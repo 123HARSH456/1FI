@@ -1,0 +1,591 @@
+[
+  {
+    "_id": "prod_1",
+    "name": "Apple iPhone 17 Pro",
+    "slug": "apple-iphone-17-pro",
+    "brand": "Apple",
+    "category": "Smartphones",
+    "badge": "1Fi Choice",
+    "rating": 4.9,
+    "review_count": 342,
+    "description": "The pinnacle of smartphone innovation featuring the A19 Pro bionic chip, next-gen grade 5 titanium chassis, 48MP periscope telephoto camera system, and all-day battery life with 1Fi exclusive mutual fund cashback perks.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/apple/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "A19 Pro Chip with 6-core GPU",
+      "Super Retina XDR 120Hz ProMotion Display",
+      "Triple 48MP Camera system with 5x optical zoom",
+      "Action Button & Ceramic Shield gen 2"
+    ],
+    "variants": [
+      {
+        "_id": "prod_1_v1",
+        "variant_name": "256GB - Sunset Gold",
+        "storage": "256GB",
+        "color": "Sunset Gold",
+        "color_code": "#E37A3F",
+        "mrp": 134900,
+        "price": 129900,
+        "stock": 18,
+        "is_default": true,
+        "image_url": "/images/iphone-17-pro.png",
+        "gallery": [
+          "/images/iphone-17-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_1_v1_plan_1",
+            "plan_label": "3 Months No Cost EMI",
+            "tenure_months": 3,
+            "interest_rate": 0,
+            "monthly_amount": 43300,
+            "cashback_amount": 1500,
+            "cashback_note": "₹1,500 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_1_v1_plan_2",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 21650,
+            "cashback_amount": 3500,
+            "cashback_note": "₹3,500 invested in Parag Parikh Flexi Cap Fund on 1st EMI",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_1_v1_plan_3",
+            "plan_label": "9 Months Wealth Builder",
+            "tenure_months": 9,
+            "interest_rate": 8.5,
+            "monthly_amount": 14950,
+            "cashback_amount": 4200,
+            "cashback_note": "₹4,200 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 199
+          },
+          {
+            "_id": "prod_1_v1_plan_4",
+            "plan_label": "12 Months Balanced EMI",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 11350,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in Mirae Asset Large Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Mirae Asset Large Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          },
+          {
+            "_id": "prod_1_v1_plan_5",
+            "plan_label": "24 Months Ultra Low EMI",
+            "tenure_months": 24,
+            "interest_rate": 10.5,
+            "monthly_amount": 6150,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in Nippon India Growth Fund",
+            "fund_backed": true,
+            "fund_name": "Nippon India Growth Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 499
+          }
+        ]
+      },
+      {
+        "_id": "prod_1_v2",
+        "variant_name": "512GB - Sunset Gold",
+        "storage": "512GB",
+        "color": "Sunset Gold",
+        "color_code": "#E37A3F",
+        "mrp": 154900,
+        "price": 149900,
+        "stock": 12,
+        "is_default": false,
+        "image_url": "/images/iphone-17-pro.png",
+        "gallery": [
+          "/images/iphone-17-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_1_v2_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 24983,
+            "cashback_amount": 4000,
+            "cashback_note": "₹4,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_1_v2_plan_2",
+            "plan_label": "12 Months Balanced EMI",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 13098,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in Mirae Asset Large Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Mirae Asset Large Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          }
+        ]
+      },
+      {
+        "_id": "prod_1_v3",
+        "variant_name": "256GB - Titanium Silver",
+        "storage": "256GB",
+        "color": "Titanium Silver",
+        "color_code": "#D1D5DB",
+        "mrp": 134900,
+        "price": 129900,
+        "stock": 14,
+        "is_default": false,
+        "image_url": "/images/iphone-17-pro.png",
+        "gallery": [
+          "/images/iphone-17-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_1_v3_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 21650,
+            "cashback_amount": 3500,
+            "cashback_note": "₹3,500 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_2",
+    "name": "Samsung Galaxy S25 Ultra",
+    "slug": "samsung-galaxy-s25-ultra",
+    "brand": "Samsung",
+    "category": "Smartphones",
+    "badge": "Popular",
+    "rating": 4.8,
+    "review_count": 289,
+    "description": "Unleash your productivity with Galaxy AI, Snapdragon 8 Elite chipset, integrated S-Pen, and a groundbreaking 200MP camera system in a titanium frame. Backed by 1Fi Mutual Fund wealth cashback.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/samsung/",
+      "frameCount": 30,
+      "zoom": 1.15
+    },
+    "features": [
+      "Snapdragon 8 Elite for Galaxy (3nm)",
+      "Built-in S Pen stylus with Air Actions",
+      "200MP Quad Telephoto Camera with AI Nightography",
+      "Dynamic AMOLED 2X 120Hz Anti-Reflective Display"
+    ],
+    "variants": [
+      {
+        "_id": "prod_2_v1",
+        "variant_name": "256GB - Titanium Sand",
+        "storage": "256GB",
+        "color": "Titanium Sand",
+        "color_code": "#D8CEBE",
+        "mrp": 139999,
+        "price": 129999,
+        "stock": 22,
+        "is_default": true,
+        "image_url": "/images/samsung-s25-ultra.png",
+        "gallery": [
+          "/images/samsung-s25-ultra.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_2_v1_plan_1",
+            "plan_label": "3 Months 0% Interest",
+            "tenure_months": 3,
+            "interest_rate": 0,
+            "monthly_amount": 43333,
+            "cashback_amount": 1800,
+            "cashback_note": "₹1,800 invested in HDFC Balanced Advantage Fund",
+            "fund_backed": true,
+            "fund_name": "HDFC Balanced Advantage Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_2_v1_plan_2",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 21666,
+            "cashback_amount": 4000,
+            "cashback_note": "₹4,000 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_2_v1_plan_3",
+            "plan_label": "12 Months Smart Wealth",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 11360,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          },
+          {
+            "_id": "prod_2_v1_plan_4",
+            "plan_label": "24 Months Ultra Low EMI",
+            "tenure_months": 24,
+            "interest_rate": 10.5,
+            "monthly_amount": 6155,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 499
+          }
+        ]
+      },
+      {
+        "_id": "prod_2_v2",
+        "variant_name": "512GB - Titanium Sand",
+        "storage": "512GB",
+        "color": "Titanium Sand",
+        "color_code": "#D8CEBE",
+        "mrp": 159999,
+        "price": 149999,
+        "stock": 10,
+        "is_default": false,
+        "image_url": "/images/samsung-s25-ultra.png",
+        "gallery": [
+          "/images/samsung-s25-ultra.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_2_v2_plan_1",
+            "plan_label": "6 Months 0% No Cost EMI",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 25000,
+            "cashback_amount": 4500,
+            "cashback_note": "₹4,500 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_2_v2_plan_2",
+            "plan_label": "12 Months Smart Wealth",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 13106,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_3",
+    "name": "Google Pixel 9 Pro",
+    "slug": "google-pixel-9-pro",
+    "brand": "Google",
+    "category": "Smartphones",
+    "badge": "Best Camera",
+    "rating": 4.8,
+    "review_count": 215,
+    "description": "Experience pure Google AI with Gemini Nano built-in, the revolutionary Tensor G4 processor, unmatched computational photography, and 7 years of OS updates with mutual fund reward investments.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/pixel/",
+      "frameCount": 30,
+      "zoom": 1.08
+    },
+    "features": [
+      "Google Tensor G4 with Titan M2 security",
+      "Pro 50MP triple camera with 30x Super Res Zoom",
+      "Gemini Nano & AI Add Me photo features",
+      "Super Actua 1-120Hz LTPO OLED Display"
+    ],
+    "variants": [
+      {
+        "_id": "prod_3_v1",
+        "variant_name": "128GB - Porcelain White",
+        "storage": "128GB",
+        "color": "Porcelain White",
+        "color_code": "#F2EFE9",
+        "mrp": 109999,
+        "price": 99999,
+        "stock": 20,
+        "is_default": true,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_3_v1_plan_1",
+            "plan_label": "3 Months 0% No Cost EMI",
+            "tenure_months": 3,
+            "interest_rate": 0,
+            "monthly_amount": 33333,
+            "cashback_amount": 1500,
+            "cashback_note": "₹1,500 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_3_v1_plan_2",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 16666,
+            "cashback_amount": 3000,
+            "cashback_note": "₹3,000 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_3_v1_plan_3",
+            "plan_label": "12 Months Balanced EMI",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 8740,
+            "cashback_amount": 4500,
+            "cashback_note": "₹4,500 invested in HDFC Top 100 Fund",
+            "fund_backed": true,
+            "fund_name": "HDFC Top 100 Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          },
+          {
+            "_id": "prod_3_v1_plan_4",
+            "plan_label": "24 Months Ultra Low EMI",
+            "tenure_months": 24,
+            "interest_rate": 10.5,
+            "monthly_amount": 4735,
+            "cashback_amount": 5000,
+            "cashback_note": "₹5,000 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 499
+          }
+        ]
+      },
+      {
+        "_id": "prod_3_v2",
+        "variant_name": "256GB - Porcelain White",
+        "storage": "256GB",
+        "color": "Porcelain White",
+        "color_code": "#F2EFE9",
+        "mrp": 119999,
+        "price": 109999,
+        "stock": 15,
+        "is_default": false,
+        "image_url": "/images/pixel-9-pro.png",
+        "gallery": [
+          "/images/pixel-9-pro.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_3_v2_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 18333,
+            "cashback_amount": 3500,
+            "cashback_note": "₹3,500 invested in UTI Nifty 50 Index Fund",
+            "fund_backed": true,
+            "fund_name": "UTI Nifty 50 Index Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_3_v2_plan_2",
+            "plan_label": "12 Months Balanced EMI",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 9610,
+            "cashback_amount": 4800,
+            "cashback_note": "₹4,800 invested in HDFC Top 100 Fund",
+            "fund_backed": true,
+            "fund_name": "HDFC Top 100 Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 299
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "prod_4",
+    "name": "OnePlus 13 5G",
+    "slug": "oneplus-13-5g",
+    "brand": "OnePlus",
+    "category": "Smartphones",
+    "badge": "Value Flagship",
+    "rating": 4.7,
+    "review_count": 178,
+    "description": "Ultra-fast performance with Snapdragon 8 Elite, Hasselblad 4th Gen camera system, 6000mAh silicon-carbon battery, and 100W SUPERVOOC charging. Comes with 1Fi mutual fund wealth perks.",
+    "viewer": {
+      "enabled": true,
+      "framesPath": "/assets/phone360/oppo/",
+      "frameCount": 30,
+      "zoom": 1.12
+    },
+    "features": [
+      "Snapdragon 8 Elite Processor",
+      "Hasselblad Camera with 50MP Sony LYT-808 Sensor",
+      "6000mAh Battery with 100W Wired & 50W Wireless Charging",
+      "2K 120Hz Oriental OLED Display"
+    ],
+    "variants": [
+      {
+        "_id": "prod_4_v1",
+        "variant_name": "256GB - Midnight Blue",
+        "storage": "256GB",
+        "color": "Midnight Blue",
+        "color_code": "#2B436D",
+        "mrp": 69999,
+        "price": 64999,
+        "stock": 25,
+        "is_default": true,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_4_v1_plan_1",
+            "plan_label": "3 Months 0% No Cost EMI",
+            "tenure_months": 3,
+            "interest_rate": 0,
+            "monthly_amount": 21666,
+            "cashback_amount": 1200,
+            "cashback_note": "₹1,200 invested in Parag Parikh Flexi Cap Fund",
+            "fund_backed": true,
+            "fund_name": "Parag Parikh Flexi Cap Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_4_v1_plan_2",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 10833,
+            "cashback_amount": 2500,
+            "cashback_note": "₹2,500 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          },
+          {
+            "_id": "prod_4_v1_plan_3",
+            "plan_label": "12 Months Balanced EMI",
+            "tenure_months": 12,
+            "interest_rate": 9.5,
+            "monthly_amount": 5680,
+            "cashback_amount": 3500,
+            "cashback_note": "₹3,500 invested in ICICI Prudential Bluechip Fund",
+            "fund_backed": true,
+            "fund_name": "ICICI Prudential Bluechip Fund",
+            "is_recommended": false,
+            "down_payment": 0,
+            "processing_fee": 199
+          }
+        ]
+      },
+      {
+        "_id": "prod_4_v2",
+        "variant_name": "512GB - Midnight Blue",
+        "storage": "512GB",
+        "color": "Midnight Blue",
+        "color_code": "#2B436D",
+        "mrp": 79999,
+        "price": 74999,
+        "stock": 18,
+        "is_default": false,
+        "image_url": "/images/oneplus-13.png",
+        "gallery": [
+          "/images/oneplus-13.png"
+        ],
+        "emi_plans": [
+          {
+            "_id": "prod_4_v2_plan_1",
+            "plan_label": "6 Months 0% Smart Plan",
+            "tenure_months": 6,
+            "interest_rate": 0,
+            "monthly_amount": 12500,
+            "cashback_amount": 3000,
+            "cashback_note": "₹3,000 invested in SBI Small Cap Fund",
+            "fund_backed": true,
+            "fund_name": "SBI Small Cap Fund",
+            "is_recommended": true,
+            "down_payment": 0,
+            "processing_fee": 0
+          }
+        ]
+      }
+    ]
+  }
+]

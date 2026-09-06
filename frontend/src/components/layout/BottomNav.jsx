@@ -17,7 +17,7 @@ export default function BottomNav({ activeNav = 'shop', onNavChange, onBackToSho
   ];
 
   return (
-    <nav className="sticky bottom-0 z-40 bg-white border-t border-[#EAEFF6] px-2 py-1.5 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
+    <nav className="shrink-0 z-40 bg-white border-t border-[#EAEFF6] px-2 py-1.5 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
       <div className="flex items-center justify-around">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -34,17 +34,17 @@ export default function BottomNav({ activeNav = 'shop', onNavChange, onBackToSho
               }}
               className={`flex flex-col items-center justify-center py-1 px-2.5 transition-all relative ${
                 isActive 
-                  ? 'text-[#6C38FF]' 
+                  ? 'text-[#722EDC]' 
                   : 'text-[#8C93A8] hover:text-[#50576B]'
               }`}
             >
               {/* Active Indicator Top Line */}
               {isActive && (
-                <span className="absolute -top-1.5 w-7 h-1 bg-[#6C38FF] rounded-full"></span>
+                <span className="absolute -top-1.5 w-7 h-1 bg-[#722EDC] rounded-full"></span>
               )}
 
               <Icon className={`w-5 h-5 mb-0.5 ${isActive ? 'stroke-[2.5]' : 'stroke-[1.8]'}`} />
-              <span className={`text-[10px] tracking-tight ${isActive ? 'font-bold text-[#6C38FF]' : 'font-medium'}`}>
+              <span className={`text-[10px] tracking-tight ${isActive ? 'font-bold text-[#722EDC]' : 'font-medium'}`}>
                 {item.label}
               </span>
             </button>

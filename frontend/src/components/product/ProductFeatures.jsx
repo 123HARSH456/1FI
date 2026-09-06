@@ -8,7 +8,7 @@ export default function ProductFeatures({ description, features = [] }) {
     <div className="space-y-2">
       <div className="flex items-center justify-between px-1">
         <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#8C93A8] flex items-center gap-1.5">
-          <Info className="w-3.5 h-3.5 text-[#6C38FF]" />
+          <Info className="w-3.5 h-3.5 text-[#722EDC]" />
           <span>Product Overview & Specifications</span>
         </span>
       </div>

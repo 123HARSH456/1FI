@@ -5,10 +5,7 @@ import NearbyStoresTab from '../components/shop/NearbyStoresTab';
 import MarketplaceTab from '../components/shop/MarketplaceTab';
 import { fetchProducts } from '../services/api';
 
-export default function ShopPage({ 
-  onSelectProduct, 
-  searchQuery 
-}) {
+export default function ShopPage({ onSelectProduct }) {
   const [activeTab, setActiveTab] = useState('marketplace');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,8 +19,7 @@ export default function ShopPage({
     try {
       const data = await fetchProducts({
         category: selectedCategory,
-        brand: selectedBrand,
-        search: searchQuery
+        brand: selectedBrand
       });
       setProducts(data || []);
     } catch (err) {
@@ -35,10 +31,10 @@ export default function ShopPage({
 
   useEffect(() => {
     loadProducts();
-  }, [selectedCategory, selectedBrand, searchQuery]);
+  }, [selectedCategory, selectedBrand]);
 
   return (
-    <div className="flex-1 flex flex-col">
+    <div className="flex-1 flex flex-col min-h-0">
       <ShopTabs 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 

@@ -1,0 +1,18 @@
+[
+  {
+    "order_id": "1FI-89A7B2",
+    "status": "APPROVED",
+    "product_name": "Apple iPhone 17 Pro",
+    "variant_name": "256GB - Sunset Gold",
+    "total_amount": 129900,
+    "monthly_emi": 21650,
+    "tenure_months": 6,
+    "interest_rate": 0,
+    "cashback_invested": 3500,
+    "mutual_fund_target": "Parag Parikh Flexi Cap Fund",
+    "user_phone": "9876543210",
+    "user_pan": "ABCDE1234F",
+    "created_at": "2026-09-01T10:30:00.000Z",
+    "first_emi_date": "2026-10-01"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "tag": "SNAPDRAGON 8 ELITE",
+    "tagColor": "text-[#F87171]",
+    "title": "OnePlus 13 5G Fast Performance",
+    "price": "Starts at ₹5,680/mo",
+    "image": "/images/oneplus-offer.jpg",
+    "objectPosition": "86% center",
+    "scale": 1.15,
+    "slug": "oneplus-13-5g"
+  },
+  {
+    "tag": "PRO TITANIUM & A19 PRO",
+    "tagColor": "text-[#FFB800]",
+    "title": "Apple iPhone 17 Pro Flagship",
+    "price": "Starts at ₹6,150/mo",
+    "image": "/images/iphone-offer.jpg",
+    "objectPosition": "74% center",
+    "scale": 1.15,
+    "slug": "apple-iphone-17-pro"
+  },
+  {
+    "tag": "EVERYDAY PRO PERFORMANCE",
+    "tagColor": "text-[#ECA73A]",
+    "title": "Get Your New MacBook for Work",
+    "price": "Starts at ₹2000/mo",
+    "image": "/images/macbook-offer.jpg",
+    "objectPosition": "74% center",
+    "scale": 1.18,
+    "slug": "apple-iphone-17-pro"
+  },
+  {
+    "tag": "NEXT-GEN GALAXY AI",
+    "tagColor": "text-[#00D09C]",
+    "title": "Samsung Galaxy S25 Ultra 5G",
+    "price": "0% EMI + ₹5,000 MF Credit",
+    "image": "/images/samsung-offer.jpg",
+    "objectPosition": "74% center",
+    "scale": 1.12,
+    "slug": "samsung-galaxy-s25-ultra"
+  },
+  {
+    "tag": "PRO CAMERAS & GEMINI AI",
+    "tagColor": "text-[#60A5FA]",
+    "title": "Google Pixel 9 Pro with Gemini",
+    "price": "₹4,735/mo · Zero Down Payment",
+    "image": "/images/pixel-offer.jpg",
+    "objectPosition": "74% center",
+    "scale": 1.12,
+    "slug": "google-pixel-9-pro"
+  }
+]

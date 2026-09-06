@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import MobileFrame from './components/layout/MobileFrame';
-import AppHeader from './components/layout/AppHeader';
 import BottomNav from './components/layout/BottomNav';
 import ShopPage from './pages/ShopPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 
 export default function App() {
-  const [viewMode, setViewMode] = useState('mobile');
   const [activeNav, setActiveNav] = useState('shop');
   const [selectedProductSlug, setSelectedProductSlug] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showSearch, setShowSearch] = useState(false);
 
   useEffect(() => {
     const handleUrlChange = () => {
@@ -50,39 +45,39 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return (
-    <MobileFrame viewMode={viewMode}>
-      <AppHeader
-        viewMode={viewMode}
-        setViewMode={setViewMode}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        showSearch={showSearch}
-        setShowSearch={setShowSearch}
-      />
+  const handleNavChange = (nav) => {
+    setActiveNav(nav);
+    if (selectedProductSlug) {
+      setSelectedProductSlug(null);
+      window.history.pushState(null, '', '/');
+    }
+  };
 
-      <main className="flex-1 flex flex-col">
+  return (
+    <div className="flex-1 flex flex-col h-full min-h-0 relative bg-[#F5F6FA] overflow-hidden">
+
+      <main className="flex-1 flex flex-col min-h-0 overflow-y-auto no-scrollbar">
         {selectedProductSlug ? (
           <ProductDetailPage
             slug={selectedProductSlug}
             onBack={handleBackToShop}
           />
-        ) : (
+        ) : activeNav === 'shop' ? (
           <ShopPage
             onSelectProduct={handleSelectProduct}
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
           />
+        ) : (
+          <div className="flex-1 bg-[#F5F6FA]" />
         )}
       </main>
 
       {!selectedProductSlug && (
         <BottomNav
           activeNav={activeNav}
-          onNavChange={setActiveNav}
+          onNavChange={handleNavChange}
           onBackToShop={handleBackToShop}
         />
       )}
-    </MobileFrame>
+    </div>
   );
 }

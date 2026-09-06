@@ -17,7 +17,7 @@ export default function EMIPlanSelector({
     <div className="space-y-2">
       <div className="flex items-center justify-between px-1">
         <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#8C93A8] flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-[#6C38FF]" />
+          <Sparkles className="w-3.5 h-3.5 text-[#722EDC]" />
           <span>Flexible Financing & EMI</span>
         </span>
         <span className="text-[10px] text-[#008C62] font-bold bg-[#E6F9F3] px-2 py-0.5 rounded-full">
@@ -40,7 +40,7 @@ export default function EMIPlanSelector({
           {selectedPlan && (
             <div className="text-right">
               <span className="text-[10px] text-[#8C93A8] block">Selected Tenure</span>
-              <span className="text-xs font-bold text-[#6C38FF] bg-[#F3EFFF] px-2 py-1 rounded-lg border border-[#E4D8FF] inline-block">
+              <span className="text-xs font-bold text-[#722EDC] bg-[#F4EEFF] px-2 py-1 rounded-lg border border-[#D4B8FF] inline-block">
                 {selectedPlan.tenure_months} Months
               </span>
             </div>
@@ -54,7 +54,7 @@ export default function EMIPlanSelector({
 
           <button
             onClick={() => setShowPlans(!showPlans)}
-            className="text-xs font-bold text-[#6C38FF] flex items-center gap-1 hover:underline cursor-pointer"
+            className="text-xs font-bold text-[#722EDC] flex items-center gap-1 hover:underline cursor-pointer"
           >
             <span>{showPlans ? 'Hide all plans' : 'View all plans'}</span>
             {showPlans ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -74,19 +74,19 @@ export default function EMIPlanSelector({
                   onClick={() => onSelectPlan(plan)}
                   className={`p-3.5 rounded-2xl cursor-pointer transition-all flex flex-col gap-2 ${
                     isSelected
-                      ? 'bg-[#F3EFFF] border-2 border-[#6C38FF] shadow-sm'
+                      ? 'bg-[#F4EEFF] border-2 border-[#722EDC] shadow-sm'
                       : 'bg-[#FAFBFD] border border-[#EAEFF6] hover:bg-slate-50'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${
-                        isSelected ? 'border-[#6C38FF] bg-[#6C38FF]' : 'border-[#CBD2E1]'
+                        isSelected ? 'border-[#722EDC] bg-[#722EDC]' : 'border-[#CBD2E1]'
                       }`}>
                         {isSelected && <CheckCircle2 className="w-3.5 h-3.5 text-white stroke-[3]" />}
                       </div>
 
-                      <span className={`text-xs font-bold ${isSelected ? 'text-[#6C38FF]' : 'text-[#151928]'}`}>
+                      <span className={`text-xs font-bold ${isSelected ? 'text-[#722EDC]' : 'text-[#151928]'}`}>
                         {plan.tenure_months} Months · {plan.interest_rate === 0 ? '0% No-Cost EMI' : `${plan.interest_rate}% p.a.`}
                       </span>
 
@@ -115,7 +115,7 @@ export default function EMIPlanSelector({
                           <strong className="text-[#008C62]">{plan.fund_name}</strong>
                         </span>
                       </div>
-                      <span className="text-[9px] font-bold text-[#6C38FF] bg-[#F3EFFF] px-1.5 py-0.5 rounded border border-[#E4D8FF] shrink-0">
+                      <span className="text-[9px] font-bold text-[#722EDC] bg-[#F4EEFF] px-1.5 py-0.5 rounded border border-[#D4B8FF] shrink-0">
                         Direct Folio
                       </span>
                     </div>

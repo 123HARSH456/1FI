@@ -8,10 +8,10 @@ export default function VariantSelector({ variants = [], selectedVariant, onSele
     <div className="space-y-2">
       <div className="flex items-center justify-between px-1">
         <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#8C93A8] flex items-center gap-1.5">
-          <Layers className="w-3.5 h-3.5 text-[#6C38FF]" />
+          <Layers className="w-3.5 h-3.5 text-[#722EDC]" />
           <span>Select Variant</span>
         </span>
-        <span className="text-[11px] text-[#6C38FF] font-bold">
+        <span className="text-[11px] text-[#722EDC] font-bold">
           {variants.length} Options Available
         </span>
       </div>
@@ -26,19 +26,19 @@ export default function VariantSelector({ variants = [], selectedVariant, onSele
               onClick={() => onSelectVariant(variant)}
               className={`p-3.5 rounded-2xl cursor-pointer transition-all flex items-center justify-between ${
                 isSelected
-                  ? 'border-2 border-[#6C38FF] bg-[#F9F7FF] shadow-sm'
-                  : 'card-white hover:border-[#D8C7FF]'
+                  ? 'border-2 border-[#722EDC] bg-[#FBF9FF] shadow-sm'
+                  : 'card-white hover:border-[#D4B8FF]'
               }`}
             >
               <div className="flex items-center gap-3">
                 {/* Radio selection circle */}
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
-                    isSelected ? 'border-[#6C38FF]' : 'border-[#CBD2E1]'
+                    isSelected ? 'border-[#722EDC]' : 'border-[#CBD2E1]'
                   }`}
                 >
                   {isSelected && (
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#6C38FF]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#722EDC]"></div>
                   )}
                 </div>
 
