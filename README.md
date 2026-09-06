@@ -1,4 +1,4 @@
-# 🛍️ 1Fi Marketplace — 0% EMI & Mutual Fund Wealth Catalog
+# 🛍️ 1Fi Marketplace
 
 > **A modern, mobile-first e-commerce marketplace for 1Fi** featuring zero-interest electronics financing, interactive 360° product exploration, instant catalog search, dynamic pagination, and cashback invested directly into Mutual Funds.
 
@@ -50,26 +50,31 @@ The marketplace is structured specifically for a frictionless mobile shopping ex
 ## ✨ Key Features & Capabilities
 
 ### 1. 💜 Unified `#722EDC` Purple Accent Design System
+
 - **Single Source of Truth**: All primary buttons, active tabs, focus rings, badges, indicators, and glow states uniformly reference `--primary-purple: #722EDC`.
 - **Systematic Tokens**: Documented in `index.css` and `tailwind.config.js` with harmonized tints (`#F4EEFF`, `#D4B8FF`, `#5F24BD`) and elevation glows (`rgba(114, 46, 220, 0.3)`).
 - **Realistic Phone Chassis**: Desktop view is encased in a responsive smartphone chassis with status bar and dynamic island, seamlessly collapsing to full bleed on mobile devices.
 
 ### 2. 🔄 Interactive 360° Rotational Product Viewer
+
 - **All 24 Models Enabled**: Every product card in the catalog opens to an interactive 360° rotating frame viewer.
 - **30 High-Resolution Transparent Frames**: Preloaded sequence allowing natural horizontal finger swiping on mobile and mouse dragging on desktop.
-- **Smooth Wrap-Around**: Rotates fluidly through 360 degrees in both directions with a custom hint badge (*"Swipe to rotate 360°"*).
+- **Smooth Wrap-Around**: Rotates fluidly through 360 degrees in both directions with a custom hint badge (_"Swipe to rotate 360°"_).
 
 ### 3. 🖼️ Full-Bleed Promotional Offers Carousel
+
 - **Edge-to-Edge Composition**: High-impact commercial banners featuring the OnePlus 13 5G, iPhone 17 Pro, Galaxy S25 Ultra, and Pixel 9 Pro.
 - **Readability Scrim**: Directional gradient protecting typography on the left while keeping the transparent phone hardware crisp on the right.
 - **Micro-Interactions**: Auto-rotates every 3.5 seconds, pauses on touch or hover, and includes active `#722EDC` pill indicators.
 
 ### 4. 🔍 Instant Marketplace Search Bar
+
 - **Instant Search**: Filters products on every keystroke across name, brand, category, description, storage variants, and color names.
-- **Clean Empty State**: Displays tailored feedback and a *"Clear Search"* button when no products match.
+- **Clean Empty State**: Displays tailored feedback and a _"Clear Search"_ button when no products match.
 - **Reusable Component**: Fully decoupled inside `src/components/SearchBar/` with mobile-first 48px touch targets.
 
 ### 5. 📄 Scalable 24-Product Catalog & Pagination
+
 - **Extended Real-World Catalog**: 24 complete products across 7 global smartphone brands:
   - 🍏 **Apple**: iPhone 17 Pro, iPhone 16, iPhone 16 Pro Max, iPhone 15
   - 🌌 **Samsung**: Galaxy S25 Ultra, Galaxy S24 FE, Galaxy Z Fold 6, Galaxy Z Flip 6
@@ -86,6 +91,7 @@ The marketplace is structured specifically for a frictionless mobile shopping ex
   - Smoothly scrolls back to the product catalog on page transitions.
 
 ### 6. 📈 Mutual Fund-Backed EMI Financing Matrix
+
 - **Wealth Creation on Every Purchase**: Transparent monthly EMI plans where cashback is routed directly to AMFI mutual fund folios (Parag Parikh Flexi Cap Fund, UTI Nifty 50 Index Fund, ICICI Prudential Bluechip Fund, SBI Small Cap Fund).
 - **Interactive Variant & EMI Plan Selector**: Switch storage options and tenures (3, 6, 12, 24 months) with dynamic price, interest rate, and cashback recalculation.
 - **Instant KYC & Order Checkout Drawer**: Simulated PAN and mobile number verification with celebratory confetti upon instant approval.
@@ -135,10 +141,12 @@ The marketplace is structured specifically for a frictionless mobile shopping ex
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
+
 - **Node.js** (v18.0 or higher recommended)
 - **npm** (v9.0 or higher)
 
 ### 2. Installation
+
 Clone the repository and install all dependencies:
 
 ```bash
@@ -154,6 +162,7 @@ npm run install:all
 ```
 
 ### 3. Running the Development Server
+
 Launch the local Vite development server:
 
 ```bash
@@ -165,6 +174,7 @@ The application will be live at:
 👉 **`http://localhost:3000`**
 
 ### 4. Production Build
+
 Verify production compilation:
 
 ```bash
@@ -193,12 +203,12 @@ When testing or reviewing the application, verify the following core user flows:
    - Notice how changing pages smoothly scrolls back to the product section.
 
 3. **Experience the 360° Product Viewer**:
-   - Tap any device (e.g. *Apple iPhone 17 Pro*, *Samsung Galaxy S25 Ultra*, *Google Pixel 9 Pro*, or *OnePlus 13*).
+   - Tap any device (e.g. _Apple iPhone 17 Pro_, _Samsung Galaxy S25 Ultra_, _Google Pixel 9 Pro_, or _OnePlus 13_).
    - Drag horizontally with your mouse or swipe with your finger to spin the device 360 degrees.
    - Switch variants (storage and color) and watch the price and EMI recalculate.
 
 4. **Avail 1Fi 0% EMI & Mutual Fund Investment**:
-   - Expand the **Flexible Financing & EMI** plans to inspect the mutual fund allocation callout (*"₹3,500 invested in Parag Parikh Flexi Cap Fund"*).
+   - Expand the **Flexible Financing & EMI** plans to inspect the mutual fund allocation callout (_"₹3,500 invested in Parag Parikh Flexi Cap Fund"_).
    - Tap **Continue** to trigger the **Checkout Drawer**.
    - Review your financing summary, enter mock PAN / Phone, and tap **Confirm & Avail 1Fi EMI**.
    - Enjoy the celebratory confetti and approval confirmation!
@@ -206,4 +216,5 @@ When testing or reviewing the application, verify the following core user flows:
 ---
 
 ## 📄 License
+
 MIT License © 2026 [123HARSH456](https://github.com/123HARSH456).
