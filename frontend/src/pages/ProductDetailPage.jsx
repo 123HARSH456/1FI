@@ -145,7 +145,11 @@ export default function ProductDetailPage({ slug, onBack }) {
 
           <div className="w-full h-[268px] sm:h-[285px] flex items-center justify-center my-1 bg-transparent overflow-hidden">
             <ProductViewer
-              staticImage={selectedVariant?.image_url ? `${selectedVariant.image_url}?v=2` : ''}
+              staticImage={
+                selectedVariant?.image_url 
+                  ? (selectedVariant.image_url.includes('?') ? selectedVariant.image_url : `${selectedVariant.image_url}?v=2`)
+                  : (product?.default_variant?.image_url ? `${product.default_variant.image_url}?v=2` : '')
+              }
               alt={product.name}
               viewer={selectedVariant?.viewer || product.viewer}
               zoom={selectedVariant?.viewer?.zoom || product.viewer?.zoom || 1.15}

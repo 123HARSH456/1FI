@@ -22,6 +22,10 @@
   cursor: default;
 }
 
+.product-viewer-container.is-loading {
+  cursor: default;
+}
+
 .product-viewer-image {
   user-select: none;
   -webkit-user-select: none;
@@ -49,6 +53,45 @@
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+/* Non-scrollable product section placeholder visible while 3D images load */
+.product-viewer-placeholder {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.product-viewer-placeholder.is-active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.product-viewer-placeholder.is-faded {
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Interactive 3D sequence layer */
+.product-viewer-3d {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.product-viewer-3d.is-faded {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.product-viewer-3d.is-active {
+  opacity: 1;
+  z-index: 3;
 }
 
 /* Subtle 360 Interaction Hint */

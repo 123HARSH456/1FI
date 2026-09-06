@@ -55,6 +55,11 @@ export default function ProductViewer({
   // State
   const [hasInteracted, setHasInteracted] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [is3dReady, setIs3dReady] = useState(() => {
+    if (!isEnabled || totalFrames <= 0) return true;
+    const firstUrl = rawPath ? (rawPath.endsWith('/') ? `${rawPath}${template ? template.replace('{index}', String(1).padStart(digits, '0')) : `frame-${String(1).padStart(digits, '0')}.png`}` : `${rawPath}/${template ? template.replace('{index}', String(1).padStart(digits, '0')) : `frame-${String(1).padStart(digits, '0')}.png`}`) : '';
+    return Boolean(firstUrl && frameImageCache.has(firstUrl));
+  });
 
   // Refs for high-performance interaction without React re-renders on every pointer move
   const currentFrameRef = useRef(0);
@@ -82,7 +87,41 @@ export default function ProductViewer({
     return urls;
   }, [isEnabled, totalFrames, rawPath, template, digits]);
 
-  // Preload all 360 frame images into memory in the background
+  // Track 3D readiness: prioritize loading the initial frame so placeholder can smoothly transition
+  useEffect(() => {
+    if (!isEnabled || frameUrls.length === 0) {
+      setIs3dReady(true);
+      return;
+    }
+
+    const firstUrl = frameUrls[0];
+    if (frameImageCache.has(firstUrl)) {
+      setIs3dReady(true);
+      return;
+    }
+
+    setIs3dReady(false);
+    let isMounted = true;
+    const img = new Image();
+    img.src = firstUrl;
+    img.onload = () => {
+      frameImageCache.add(firstUrl);
+      if (isMounted) {
+        setIs3dReady(true);
+      }
+    };
+    img.onerror = () => {
+      if (isMounted) {
+        setIs3dReady(false);
+      }
+    };
+
+    return () => {
+      isMounted = false;
+    };
+  }, [isEnabled, frameUrls]);
+
+  // Preload remaining 360 frame images into memory in the background
   useEffect(() => {
     if (!isEnabled || frameUrls.length === 0) return;
 
@@ -126,7 +165,7 @@ export default function ProductViewer({
 
   // Pointer event handlers supporting both desktop mouse drag and mobile touch swiping
   const handlePointerDown = (e) => {
-    if (!isEnabled || frameUrls.length <= 1 || !e.isPrimary) return;
+    if (!isEnabled || !is3dReady || frameUrls.length <= 1 || !e.isPrimary) return;
 
     // Prevent default browser image dragging
     e.preventDefault();
@@ -139,7 +178,7 @@ export default function ProductViewer({
   };
 
   const handlePointerMove = (e) => {
-    if (!isPointerDownRef.current || !isEnabled || frameUrls.length <= 1) return;
+    if (!isPointerDownRef.current || !isEnabled || !is3dReady || frameUrls.length <= 1) return;
 
     const dx = e.clientX - startXRef.current;
     const dy = e.clientY - startYRef.current;
@@ -200,12 +239,11 @@ export default function ProductViewer({
 
   // Image fallback handler
   const handleImageError = () => {
+    setIs3dReady(false);
     if (staticImage && imgRef.current && imgRef.current.src !== staticImage) {
       imgRef.current.src = staticImage;
     }
   };
-
-  const initialSrc = isEnabled && frameUrls.length > 0 ? frameUrls[0] : staticImage;
 
   return (
     <div
@@ -215,22 +253,44 @@ export default function ProductViewer({
       onPointerUp={handlePointerUpOrCancel}
       onPointerCancel={handlePointerUpOrCancel}
       onDragStart={(e) => e.preventDefault()}
-      className={`product-viewer-container ${isDragging ? 'is-dragging' : ''} ${!isEnabled ? 'is-static' : ''} ${className}`}
+      className={`product-viewer-container ${isDragging ? 'is-dragging' : ''} ${!isEnabled ? 'is-static' : ''} ${isEnabled && !is3dReady ? 'is-loading' : ''} ${className}`}
       role={isEnabled ? 'slider' : 'img'}
       aria-label={isEnabled ? `${alt} 360-degree interactive view` : alt}
       aria-valuemin={isEnabled ? 1 : undefined}
       aria-valuemax={isEnabled ? frameUrls.length : undefined}
       aria-valuenow={isEnabled ? currentFrameRef.current + 1 : undefined}
     >
-      <img
-        ref={imgRef}
-        src={initialSrc}
-        alt={alt}
-        onError={handleImageError}
-        draggable={false}
-        style={{ transform: `scale(${resolvedZoom})` }}
-        className={`product-viewer-image ${isEnabled && frameUrls.length > 0 ? 'is-360' : 'is-static'} drop-shadow-md`}
-      />
+      {/* 1. Non-scrollable static image from product section (displayed immediately while 3D images are loading) */}
+      {staticImage && (
+        <img
+          src={staticImage}
+          alt={alt}
+          draggable={false}
+          style={{ transform: `scale(${resolvedZoom})` }}
+          className={`product-viewer-image is-static drop-shadow-md product-viewer-placeholder ${
+            is3dReady && isEnabled ? 'is-faded' : 'is-active'
+          }`}
+        />
+      )}
+
+      {/* 2. Interactive 3D sequence frame */}
+      {isEnabled && frameUrls.length > 0 && (
+        <img
+          ref={imgRef}
+          src={frameUrls[0]}
+          alt={alt}
+          onLoad={() => {
+            frameImageCache.add(frameUrls[0]);
+            setIs3dReady(true);
+          }}
+          onError={handleImageError}
+          draggable={false}
+          style={{ transform: `scale(${resolvedZoom})` }}
+          className={`product-viewer-image is-360 drop-shadow-md product-viewer-3d ${
+            is3dReady ? 'is-active' : 'is-faded'
+          }`}
+        />
+      )}
 
       {/* Subtle interaction hint indicator for 360 viewer */}
       {isEnabled && frameUrls.length > 1 && (
@@ -238,8 +298,8 @@ export default function ProductViewer({
           className={`product-viewer-hint ${hasInteracted ? 'is-hidden' : ''}`}
           aria-hidden={hasInteracted}
         >
-          <Rotate3d className="w-3.5 h-3.5 text-[#722EDC] stroke-[2.5]" />
-          <span>{hintText}</span>
+          <Rotate3d className={`w-3.5 h-3.5 text-[#722EDC] stroke-[2.5] ${!is3dReady ? 'animate-spin' : ''}`} />
+          <span>{is3dReady ? hintText : 'Loading 3D view...'}</span>
         </div>
       )}
     </div>
