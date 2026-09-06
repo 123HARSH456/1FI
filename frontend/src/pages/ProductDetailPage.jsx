@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { 
   ChevronLeft, 
   Share2, 
-  Edit3, 
-  ChevronUp, 
-  ChevronDown, 
-  TrendingUp, 
   Store,
   ArrowRight
 } from 'lucide-react';
+import VariantSelector from '../components/product/VariantSelector';
+import EMIPlanSelector from '../components/product/EMIPlanSelector';
+import ProductFeatures from '../components/product/ProductFeatures';
 import CheckoutDrawer from '../components/product/CheckoutDrawer';
 import { fetchProductBySlug, fetchVariantEmiPlans } from '../services/api';
 
@@ -16,10 +15,10 @@ export default function ProductDetailPage({ slug, onBack }) {
   const [product, setProduct] = useState(null);
   const [selectedVariant, setSelectedVariant] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
-  const [showPlans, setShowPlans] = useState(true);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [copiedToast, setCopiedToast] = useState(false);
 
   useEffect(() => {
     const loadDetail = async () => {
@@ -68,6 +67,16 @@ export default function ProductDetailPage({ slug, onBack }) {
     }
   };
 
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({ title: product?.name || '1Fi Marketplace', url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      setCopiedToast(true);
+      setTimeout(() => setCopiedToast(false), 2000);
+    }
+  };
+
   if (loading) {
     return (
       <div className="p-4 space-y-4 animate-pulse">
@@ -87,7 +96,7 @@ export default function ProductDetailPage({ slug, onBack }) {
         </div>
         <button
           onClick={onBack}
-          className="px-4 py-2 bg-[#6C38FF] text-white rounded-xl text-xs font-bold"
+          className="px-4 py-2 bg-[#6C38FF] text-white rounded-xl text-xs font-bold cursor-pointer"
         >
           &larr; Back to Shop
         </button>
@@ -96,26 +105,31 @@ export default function ProductDetailPage({ slug, onBack }) {
   }
 
   const emiPlans = selectedVariant?.emi_plans || [];
-  const lowestEmi = emiPlans.length > 0 
-    ? Math.min(...emiPlans.map(p => p.monthly_amount))
-    : (selectedVariant?.price || 0) / 6;
 
   return (
     <div className="flex-1 flex flex-col pb-28 animate-fadeIn bg-[#F5F6FA]">
+      {/* Top sticky header */}
       <div className="sticky top-[53px] z-30 bg-[#F5F6FA]/95 backdrop-blur-sm px-4 py-3 flex items-center justify-between border-b border-[#EAEFF6]">
         <button
           onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-bold text-[#151928] hover:text-[#6C38FF] transition-colors"
+          className="flex items-center gap-1.5 text-sm font-bold text-[#151928] hover:text-[#6C38FF] transition-colors cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
           <span>Pay using 1Fi</span>
         </button>
+
+        {copiedToast && (
+          <span className="text-[10px] font-bold text-[#008C62] bg-[#E6F9F3] px-2.5 py-1 rounded-full animate-fadeIn">
+            Link Copied!
+          </span>
+        )}
       </div>
 
       <div className="p-4 space-y-4">
+        {/* Product Image hero card */}
         <div className="card-white rounded-3xl p-5 flex flex-col items-center justify-center relative shadow-onefi-subtle">
           <div className="absolute top-4 left-4">
-            <span className="px-3 py-1 rounded-full bg-[#FAFBFD] text-[#151928] font-bold text-xs border border-[#EAEFF6] shadow-xs">
+            <span className="px-3 py-1 rounded-full bg-[#FAFBFD] text-[#151928] font-bold text-xs border border-[#EAEFF6] shadow-sm">
               {product.brand}
             </span>
           </div>
@@ -124,173 +138,56 @@ export default function ProductDetailPage({ slug, onBack }) {
             <img
               src={selectedVariant?.image_url}
               alt={product.name}
-              onError={(e) => {
-                if (e.currentTarget.src.includes('/products/')) {
-                  e.currentTarget.src = e.currentTarget.src.replace('/products/', '/images/');
-                }
-              }}
               className="max-h-full max-w-full object-contain drop-shadow-lg transition-transform duration-300 hover:scale-105"
             />
           </div>
         </div>
 
+        {/* Title and Share */}
         <div className="flex items-center justify-between px-1">
-          <h1 className="font-display font-black text-xl text-[#151928] tracking-tight">
-            {product.name}
-          </h1>
+          <div>
+            <h1 className="font-display font-black text-xl text-[#151928] tracking-tight">
+              {product.name}
+            </h1>
+            <p className="text-xs text-[#8C93A8] mt-0.5">
+              {selectedVariant?.variant_name}
+            </p>
+          </div>
 
           <button
-            onClick={() => {
-              if (navigator.share) {
-                navigator.share({ title: product.name, url: window.location.href });
-              } else {
-                navigator.clipboard.writeText(window.location.href);
-              }
-            }}
-            className="w-9 h-9 rounded-full bg-[#F3EFFF] text-[#6C38FF] flex items-center justify-center hover:bg-[#EAE2FF] transition-colors"
+            onClick={handleShare}
+            className="w-9 h-9 rounded-full bg-[#F3EFFF] text-[#6C38FF] flex items-center justify-center hover:bg-[#EAE2FF] transition-colors cursor-pointer shrink-0"
             title="Share"
           >
             <Share2 className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="space-y-2">
-          <div className="flex items-center justify-between px-1">
-            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#8C93A8]">
-              Select Your Variant
-            </span>
-            <ChevronUp className="w-4 h-4 text-[#8C93A8]" />
-          </div>
+        {/* Variant Selector */}
+        <VariantSelector
+          variants={product.variants}
+          selectedVariant={selectedVariant}
+          onSelectVariant={handleVariantSelect}
+        />
 
-          <div className="space-y-2.5">
-            {product.variants.map((variant) => {
-              const isSelected = selectedVariant?._id === variant._id;
+        {/* EMI Plans Selector */}
+        <EMIPlanSelector
+          emiPlans={emiPlans}
+          selectedPlan={selectedPlan}
+          onSelectPlan={setSelectedPlan}
+          variantPrice={selectedVariant?.price || 0}
+        />
 
-              return (
-                <div
-                  key={variant._id}
-                  onClick={() => handleVariantSelect(variant)}
-                  className={`p-3.5 rounded-2xl cursor-pointer transition-all flex items-center justify-between ${
-                    isSelected
-                      ? 'border-2 border-[#6C38FF] bg-[#F9F7FF] shadow-xs'
-                      : 'card-white hover:border-[#D8C7FF]'
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
-                      isSelected ? 'border-[#6C38FF]' : 'border-[#CBD2E1]'
-                    }`}>
-                      {isSelected && (
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#6C38FF]"></div>
-                      )}
-                    </div>
+        {/* Product Overview & Features */}
+        <ProductFeatures
+          description={product.description}
+          features={product.features}
+        />
 
-                    <div>
-                      <h4 className="text-sm font-bold text-[#151928]">
-                        2026 · {variant.storage}
-                      </h4>
-                      <p className="text-xs text-[#8C93A8]">
-                        {product.name} {variant.storage} ({variant.color})
-                      </p>
-                    </div>
-                  </div>
-
-                  <span className="font-display font-extrabold text-sm text-[#151928]">
-                    ₹{variant.price?.toLocaleString('en-IN')}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <div className="flex items-center justify-between px-1">
-            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#8C93A8]">
-              Suggested Amount
-            </span>
-            <span className="text-[10px] text-[#8C93A8]">
-              Edit if paying different amount
-            </span>
-          </div>
-
-          <div className="card-white rounded-3xl p-4 space-y-3 shadow-onefi-subtle">
-            <div className="flex items-center justify-between">
-              <div className="flex items-baseline gap-1">
-                <span className="font-display font-black text-2xl text-[#151928]">
-                  ₹ {selectedVariant?.price?.toLocaleString('en-IN')}
-                </span>
-              </div>
-              <button className="text-[#8C93A8] hover:text-[#6C38FF]">
-                <Edit3 className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div className="pt-3 border-t border-[#F0F2F8] flex items-center justify-between">
-              <span className="text-xs font-semibold text-[#8C93A8]">
-                Starts at <strong className="text-[#151928] font-bold">₹{lowestEmi?.toLocaleString('en-IN')}/mo</strong>
-              </span>
-
-              <button
-                onClick={() => setShowPlans(!showPlans)}
-                className="text-xs font-bold text-[#6C38FF] flex items-center gap-0.5 hover:underline"
-              >
-                <span>{showPlans ? 'Hide plans' : 'Show plans'}</span>
-                {showPlans ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-              </button>
-            </div>
-
-            {showPlans && (
-              <div className="space-y-2 pt-2 border-t border-[#F0F2F8]">
-                {emiPlans.map((plan) => {
-                  const isSelected = selectedPlan?._id === plan._id;
-
-                  return (
-                    <div
-                      key={plan._id || plan.tenure_months}
-                      onClick={() => setSelectedPlan(plan)}
-                      className={`p-3 rounded-xl cursor-pointer transition-all flex flex-col gap-1.5 ${
-                        isSelected
-                          ? 'bg-[#F3EFFF] border border-[#6C38FF]'
-                          : 'bg-[#FAFBFD] border border-[#EAEFF6] hover:bg-slate-50'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span className={`text-xs font-bold ${isSelected ? 'text-[#6C38FF]' : 'text-[#151928]'}`}>
-                            {plan.tenure_months} months · {plan.interest_rate === 0 ? '0% No-Cost' : `${plan.interest_rate}% p.a.`}
-                          </span>
-                          {plan.is_recommended && (
-                            <span className="text-[9px] font-black uppercase px-1.5 py-0.2 bg-[#FFB800] text-black rounded">
-                              Recommended
-                            </span>
-                          )}
-                        </div>
-
-                        <span className="text-xs font-bold text-[#151928]">
-                          ₹{plan.monthly_amount?.toLocaleString('en-IN')} <span className="text-[10px] text-[#8C93A8]">/mo</span>
-                        </span>
-                      </div>
-
-                      {plan.cashback_amount > 0 && (
-                        <div className="flex items-center justify-between text-[10px] text-[#008C62] font-semibold bg-white/80 px-2 py-1 rounded-lg border border-[#B7EBD8]">
-                          <div className="flex items-center gap-1">
-                            <TrendingUp className="w-3 h-3 text-[#00C88C]" />
-                            <span>+₹{plan.cashback_amount?.toLocaleString('en-IN')} invested in {plan.fund_name}</span>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-        </div>
-
+        {/* Merchant Partner Info */}
         <div className="space-y-1.5 px-1">
           <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#8C93A8]">
-            Paying To
+            Fulfillment Partner
           </span>
           <div className="card-white rounded-2xl p-3 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
@@ -298,8 +195,8 @@ export default function ProductDetailPage({ slug, onBack }) {
                 <Store className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-[#151928]">1Fi Marketplace Partner</h4>
-                <p className="text-[10px] text-[#8C93A8]">Verified Merchant · Indiranagar Store</p>
+                <h4 className="text-xs font-bold text-[#151928]">1Fi Verified Merchant</h4>
+                <p className="text-[10px] text-[#8C93A8]">Direct Dispatch · Authorized Brand Partner</p>
               </div>
             </div>
             <span className="text-[10px] font-bold text-[#008C62] bg-[#E6F9F3] px-2 py-0.5 rounded-full">
@@ -309,6 +206,7 @@ export default function ProductDetailPage({ slug, onBack }) {
         </div>
       </div>
 
+      {/* Sticky Bottom Bar with Selected EMI & CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-[#EAEFF6] px-4 py-3 shadow-[0_-4px_25px_rgba(0,0,0,0.06)]">
         <div className="max-w-lg mx-auto flex items-center justify-between gap-4">
           <div>
@@ -333,6 +231,7 @@ export default function ProductDetailPage({ slug, onBack }) {
         </div>
       </div>
 
+      {/* Checkout Drawer Bottom Sheet */}
       {selectedVariant && selectedPlan && (
         <CheckoutDrawer
           isOpen={isDrawerOpen}
@@ -341,7 +240,7 @@ export default function ProductDetailPage({ slug, onBack }) {
           variant={selectedVariant}
           plan={selectedPlan}
           onOrderSuccess={(order) => {
-            console.log('Order confirmed:', order.order_id);
+            // Handled in drawer with confetti
           }}
         />
       )}

@@ -1,7 +1,9 @@
-import React from 'react';
-import { Building2, Sparkles, Bell, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Building2, Sparkles, Bell, ArrowRight, Check } from 'lucide-react';
 
 export default function TopBrandsTab({ onExploreMarketplace }) {
+  const [subscribed, setSubscribed] = useState(false);
+
   const brandLogos = [
     { name: 'Apple', icon: '', tag: 'Direct Partner', color: 'bg-slate-900 text-white' },
     { name: 'Samsung', icon: 'SAMSUNG', tag: 'Official EMI', color: 'bg-blue-900 text-white text-[10px]' },
@@ -44,7 +46,7 @@ export default function TopBrandsTab({ onExploreMarketplace }) {
               key={idx}
               className="card-white card-white-hover rounded-2xl p-3 flex flex-col items-center justify-center text-center gap-1.5 cursor-pointer"
             >
-              <div className={`w-10 h-10 rounded-xl ${brand.color} flex items-center justify-center font-bold text-sm shadow-xs`}>
+              <div className={`w-10 h-10 rounded-xl ${brand.color} flex items-center justify-center font-bold text-sm shadow-sm`}>
                 {brand.icon}
               </div>
               <div>
@@ -62,13 +64,24 @@ export default function TopBrandsTab({ onExploreMarketplace }) {
       <div className="card-white rounded-2xl p-3 flex items-center justify-between">
         <div className="flex items-center gap-2 text-xs text-[#151928]">
           <Bell className="w-4 h-4 text-[#6C38FF]" />
-          <span>Get notified when brand stores launch</span>
+          <span>{subscribed ? 'You will be notified on launch' : 'Get notified when brand stores launch'}</span>
         </div>
         <button 
-          onClick={() => alert('Notifications enabled!')}
-          className="text-xs font-bold text-[#6C38FF] hover:underline cursor-pointer"
+          onClick={() => setSubscribed(!subscribed)}
+          className={`text-xs font-bold px-3 py-1 rounded-full transition-all cursor-pointer ${
+            subscribed 
+              ? 'bg-[#E6F9F3] text-[#008C62] border border-[#B7EBD8] flex items-center gap-1' 
+              : 'text-[#6C38FF] hover:underline'
+          }`}
         >
-          Notify Me
+          {subscribed ? (
+            <>
+              <Check className="w-3 h-3 stroke-[3]" />
+              <span>Subscribed</span>
+            </>
+          ) : (
+            'Notify Me'
+          )}
         </button>
       </div>
     </div>

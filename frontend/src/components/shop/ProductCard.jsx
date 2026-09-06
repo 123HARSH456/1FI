@@ -1,9 +1,11 @@
 import React from 'react';
-import { Star, TrendingUp, Sparkles, ChevronRight } from 'lucide-react';
+import { Star, TrendingUp, ChevronRight } from 'lucide-react';
 
 export default function ProductCard({ product, onSelectProduct }) {
   const defaultVar = product.default_variant || {};
-  const discountPercent = Math.round(((defaultVar.mrp - defaultVar.price) / defaultVar.mrp) * 100);
+  const discountPercent = defaultVar.mrp && defaultVar.price
+    ? Math.round(((defaultVar.mrp - defaultVar.price) / defaultVar.mrp) * 100)
+    : 0;
 
   return (
     <div
@@ -29,11 +31,6 @@ export default function ProductCard({ product, onSelectProduct }) {
         <img
           src={defaultVar.image_url}
           alt={product.name}
-          onError={(e) => {
-            if (e.currentTarget.src.includes('/products/')) {
-              e.currentTarget.src = e.currentTarget.src.replace('/products/', '/images/');
-            }
-          }}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
@@ -63,13 +60,17 @@ export default function ProductCard({ product, onSelectProduct }) {
               <span className="font-display font-extrabold text-lg text-[#151928]">
                 ₹{defaultVar.price?.toLocaleString('en-IN')}
               </span>
-              <span className="text-xs text-[#8C93A8] line-through">
-                ₹{defaultVar.mrp?.toLocaleString('en-IN')}
-              </span>
+              {defaultVar.mrp > defaultVar.price && (
+                <span className="text-xs text-[#8C93A8] line-through">
+                  ₹{defaultVar.mrp?.toLocaleString('en-IN')}
+                </span>
+              )}
             </div>
-            <span className="text-[10px] text-[#008C62] font-semibold">
-              Save ₹{(defaultVar.mrp - defaultVar.price)?.toLocaleString('en-IN')}
-            </span>
+            {defaultVar.mrp > defaultVar.price && (
+              <span className="text-[10px] text-[#008C62] font-semibold">
+                Save ₹{(defaultVar.mrp - defaultVar.price)?.toLocaleString('en-IN')}
+              </span>
+            )}
           </div>
 
           {/* EMI Starting badge */}
@@ -89,7 +90,7 @@ export default function ProductCard({ product, onSelectProduct }) {
             <div className="flex items-center gap-1.5">
               <TrendingUp className="w-3.5 h-3.5 text-[#00C88C] shrink-0" />
               <span className="text-[11px] font-bold text-[#008C62]">
-                +₹{product.max_mf_cashback?.toLocaleString('en-IN')} MF Investment
+                +₹{product.max_mf_cashback?.toLocaleString('en-IN')} MF Credit
               </span>
             </div>
             <span className="text-[9px] font-bold text-[#6C38FF] bg-[#F3EFFF] px-1.5 py-0.5 rounded border border-[#E4D8FF]">
@@ -99,7 +100,7 @@ export default function ProductCard({ product, onSelectProduct }) {
         )}
 
         {/* Action Button */}
-        <button className="w-full mt-1 py-2 px-3 rounded-xl bg-[#F5F6FA] group-hover:bg-[#6C38FF] group-hover:text-white text-[#151928] text-xs font-bold transition-all flex items-center justify-center gap-1 border border-[#EAEFF6] group-hover:border-[#6C38FF]">
+        <button className="w-full mt-1 py-2 px-3 rounded-xl bg-[#F5F6FA] group-hover:bg-[#6C38FF] group-hover:text-white text-[#151928] text-xs font-bold transition-all flex items-center justify-center gap-1 border border-[#EAEFF6] group-hover:border-[#6C38FF] cursor-pointer">
           <span>View EMI Plans</span>
           <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
         </button>

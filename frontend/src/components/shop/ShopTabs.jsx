@@ -19,7 +19,7 @@ export default function ShopTabs({ activeTab, setActiveTab }) {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-2 px-1.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-all relative ${
+              className={`flex-1 py-2 px-1.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-all relative cursor-pointer ${
                 isActive
                   ? 'bg-white text-[#6C38FF] shadow-[0_2px_8px_rgba(0,0,0,0.06)] font-bold'
                   : 'text-[#6A7389] hover:text-[#151928]'
@@ -29,7 +29,7 @@ export default function ShopTabs({ activeTab, setActiveTab }) {
               <span className="truncate">{tab.label}</span>
 
               {tab.badge && !isActive && (
-                <span className="hidden sm:inline-block text-[9px] px-1.5 py-0.2 bg-[#F3EFFF] text-[#6C38FF] rounded-full font-bold">
+                <span className="hidden sm:inline-block text-[9px] px-1.5 py-0.5 bg-[#F3EFFF] text-[#6C38FF] rounded-full font-bold">
                   {tab.badge}
                 </span>
               )}
