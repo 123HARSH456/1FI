@@ -1,289 +1,209 @@
-# 🛍️ 1Fi Marketplace - Shop Page & Mutual Fund-Backed EMI Catalog
+# 🛍️ 1Fi Marketplace — 0% EMI & Mutual Fund Wealth Catalog
 
-> 🌐 **Live Demo**: [1Fi Marketplace | Smart EMIs Backed by Mutual Funds](https://1fi-coral.vercel.app/)  
-> **Assignment Submission for 1Fi SDE Intern Role**  
-> A faithful extension of the [1Fi Android App](https://play.google.com/store/apps/details?id=in.onefi.app&hl=en_IN) featuring a 3-tab **Shop** page and a full-stack **1Fi Marketplace** where electronics can be purchased on **0% No-Cost EMI** with **cashback invested directly into Mutual Funds** on the user's behalf.
+> **A modern, mobile-first e-commerce marketplace for 1Fi** featuring zero-interest electronics financing, interactive 360° product exploration, instant catalog search, dynamic pagination, and cashback invested directly into Mutual Funds.
 
----
-
-## 🌐 Live Production Application
-
-- **Live URL**: [1Fi Marketplace | Smart EMIs Backed by Mutual Funds](https://1fi-coral.vercel.app/)
-- **API Endpoint**: [https://1fi-coral.vercel.app/api/products](https://1fi-coral.vercel.app/api/products)
-- **Repository**: [https://github.com/Logamithrancb/1fi](https://github.com/Logamithrancb/1fi)
-
-## 📸 Overview & Key Features
-
-* **Faithful 1Fi Mobile Design Language**: Authentic 1Fi emerald palette (`#00D09C`), dark mode theme (`#080E1B` / `#0B1528`), custom typography, rounded pill containers, and mobile device frame toggle.
-* **3-Tab Shop Navigation**:
-  1. 🏢 **Top Brands**: Branded flagship store placeholders & onboarding tracker.
-  2. 📍 **Nearby Stores**: Offline retail partner map & merchant locator placeholder.
-  3. ✨ **1Fi Marketplace**: Live catalog with category/brand filters and mutual fund cashback highlights.
-* **Dynamic Product Catalog & Deep Linking**:
-  - Deep-linkable routes (e.g. `/products/apple-iphone-17-pro`, `/products/samsung-galaxy-s25-ultra`, `/products/google-pixel-9-pro`, `/products/oneplus-13-5g`).
-  - Interactive variant selector (Storage & Color swatches) with live price recalculation.
-* **Mutual Fund-Backed EMI Matrix**:
-  - 0% No Cost EMI and tenure-based plans (3, 6, 9, 12, 18, 24 months).
-  - Highlighting **1Fi Recommended** plans.
-  - Transparent breakdown of mutual fund portfolio credits (e.g., *₹5,000 invested in Parag Parikh Flexi Cap Fund / SBI Small Cap Fund / Mirae Asset Large Cap Fund*).
-* **Interactive Checkout Application**:
-  - Slide-up bottom sheet with financing summary, PAN verification simulation, instant approval, and celebratory confetti animations.
+[![Repository](https://img.shields.io/badge/GitHub-123HARSH456%2F1FI-722EDC?style=for-the-badge&logo=github)](https://github.com/123HARSH456/1FI)
+[![Vite](https://img.shields.io/badge/Vite-5.4-722EDC?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-18.3-722EDC?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-722EDC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
 ---
 
-## 🛠️ Tech Stack
+## 📱 Visual Hierarchy & Architecture
 
-| Layer | Technology |
-|---|---|
-| **Frontend** | React 18, Vite, Tailwind CSS, Lucide Icons, Canvas-Confetti |
-| **Backend** | Node.js, Express.js, Morgan, CORS |
-| **Database** | MongoDB Atlas (Cloud) / Mongoose ORM |
-| **Architecture** | REST API, Monorepo (`frontend/` + `backend/`) |
+The marketplace is structured specifically for a frictionless mobile shopping experience:
 
----
-
-## 🗄️ Database Schema & Data Models
-
-The database structure maps products to variants and dynamic EMI plans with mutual fund metadata:
-
-```mermaid
-erDiagram
-    PRODUCT ||--o{ VARIANT : has
-    VARIANT ||--o{ EMI_PLAN : offers
-
-    PRODUCT {
-        string _id PK
-        string slug UK
-        string name
-        string brand
-        string category
-        string description
-        number rating
-        number review_count
-        string badge
-    }
-
-    VARIANT {
-        string _id PK
-        string product_id FK
-        string variant_name
-        string storage
-        string color
-        string color_code
-        number mrp
-        number price
-        string image_url
-        number stock
-        boolean is_default
-    }
-
-    EMI_PLAN {
-        string _id PK
-        string variant_id FK
-        string plan_label
-        number tenure_months
-        number interest_rate
-        number monthly_amount
-        number cashback_amount
-        string cashback_note
-        boolean fund_backed
-        string fund_name
-        boolean is_recommended
-        number down_payment
-        number processing_fee
-    }
+```
+┌─────────────────────────────────────────────────────────┐
+│  1Fi PAY APP HEADER                                     │
+├─────────────────────────────────────────────────────────┤
+│  1. LIMIT & PERSONALIZATION                             │
+│     • Available 1Fi credit limit balance                │
+│     • Utilization visual meter                          │
+├─────────────────────────────────────────────────────────┤
+│  2. MARKETPLACE SEARCH BAR                              │
+│     • Real-time multi-field search                      │
+│     • Dynamic clear action (×) & #722EDC focus ring     │
+├─────────────────────────────────────────────────────────┤
+│  3. SPECIAL OFFERS CAROUSEL                             │
+│     • Full-bleed promotional artwork banners            │
+│     • 3.5s auto-rotation, touch swipe & pause on hover  │
+├─────────────────────────────────────────────────────────┤
+│  4. 1Fi MARKETPLACE (2-COLUMN PRODUCT GRID)             │
+│     • Transparent device cutouts                        │
+│     • Dynamic EMI pricing & instant plan preview        │
+│     • Scalable 6-item page slicing                      │
+├─────────────────────────────────────────────────────────┤
+│  5. PAGINATION CONTROLS                                 │
+│     • Dynamic total page calculation                    │
+│     • #722EDC active highlight & mobile touch targets   │
+├─────────────────────────────────────────────────────────┤
+│  6. INFINITE BRAND PARTNERS CAROUSEL                    │
+│     • Continuous loop of certified partner brands       │
+├─────────────────────────────────────────────────────────┤
+│  BOTTOM NAVIGATION (Home · Shop · Dues · Limit · Profile│
+└─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 📡 REST API Documentation
+## ✨ Key Features & Capabilities
 
-### 1. List All Products
-- **Endpoint**: `GET /api/products`
-- **Query Params**: `?brand=Apple&category=Smartphones&search=iphone`
-- **Response**:
-```json
-{
-  "success": true,
-  "count": 4,
-  "data": [
-    {
-      "_id": "66d89f...",
-      "slug": "apple-iphone-17-pro",
-      "name": "Apple iPhone 17 Pro",
-      "brand": "Apple",
-      "category": "Smartphones",
-      "rating": 4.9,
-      "review_count": 342,
-      "total_variants": 3,
-      "default_variant": {
-        "storage": "256GB",
-        "color": "Natural Titanium",
-        "mrp": 134900,
-        "price": 129900,
-        "image_url": "https://..."
-      },
-      "min_monthly_emi": 6150,
-      "max_mf_cashback": 5000,
-      "available_colors": ["Natural Titanium", "Deep Blue"],
-      "available_storages": ["256GB", "512GB"]
-    }
-  ]
-}
-```
+### 1. 💜 Unified `#722EDC` Purple Accent Design System
+- **Single Source of Truth**: All primary buttons, active tabs, focus rings, badges, indicators, and glow states uniformly reference `--primary-purple: #722EDC`.
+- **Systematic Tokens**: Documented in `index.css` and `tailwind.config.js` with harmonized tints (`#F4EEFF`, `#D4B8FF`, `#5F24BD`) and elevation glows (`rgba(114, 46, 220, 0.3)`).
+- **Realistic Phone Chassis**: Desktop view is encased in a responsive smartphone chassis with status bar and dynamic island, seamlessly collapsing to full bleed on mobile devices.
 
-### 2. Get Product Detail by Slug
-- **Endpoint**: `GET /api/products/:slug`
-- **Example**: `GET /api/products/apple-iphone-17-pro`
-- **Response**:
-```json
-{
-  "success": true,
-  "data": {
-    "slug": "apple-iphone-17-pro",
-    "name": "Apple iPhone 17 Pro",
-    "brand": "Apple",
-    "description": "The pinnacle of smartphone innovation featuring the A19 Pro...",
-    "features": ["A19 Pro Chip", "Super Retina XDR 120Hz", "Triple 48MP Camera"],
-    "variants": [
-      {
-        "_id": "66d89f1...",
-        "variant_name": "256GB - Natural Titanium",
-        "storage": "256GB",
-        "color": "Natural Titanium",
-        "mrp": 134900,
-        "price": 129900,
-        "emi_plans": [
-          {
-            "_id": "66d89f2...",
-            "plan_label": "6 Months 0% Smart Plan",
-            "tenure_months": 6,
-            "interest_rate": 0,
-            "monthly_amount": 21650,
-            "cashback_amount": 3500,
-            "fund_name": "Parag Parikh Flexi Cap Fund",
-            "is_recommended": true
-          }
-        ]
-      }
-    ]
-  }
-}
-```
+### 2. 🔄 Interactive 360° Rotational Product Viewer
+- **All 24 Models Enabled**: Every product card in the catalog opens to an interactive 360° rotating frame viewer.
+- **30 High-Resolution Transparent Frames**: Preloaded sequence allowing natural horizontal finger swiping on mobile and mouse dragging on desktop.
+- **Smooth Wrap-Around**: Rotates fluidly through 360 degrees in both directions with a custom hint badge (*"Swipe to rotate 360°"*).
 
-### 3. Get Variant EMI Plans
-- **Endpoint**: `GET /api/variants/:id/emi-plans`
-- **Response**:
-```json
-{
-  "success": true,
-  "variant_id": "66d89f1...",
-  "variant_name": "256GB - Natural Titanium",
-  "price": 129900,
-  "mrp": 134900,
-  "emi_plans": [ ... ]
-}
-```
+### 3. 🖼️ Full-Bleed Promotional Offers Carousel
+- **Edge-to-Edge Composition**: High-impact commercial banners featuring the OnePlus 13 5G, iPhone 17 Pro, Galaxy S25 Ultra, and Pixel 9 Pro.
+- **Readability Scrim**: Directional gradient protecting typography on the left while keeping the transparent phone hardware crisp on the right.
+- **Micro-Interactions**: Auto-rotates every 3.5 seconds, pauses on touch or hover, and includes active `#722EDC` pill indicators.
 
-### 4. Create EMI Checkout Order
-- **Endpoint**: `POST /api/orders/checkout`
-- **Payload**:
-```json
-{
-  "productId": "66d89f...",
-  "variantId": "66d89f1...",
-  "emiPlanId": "66d89f2...",
-  "userPhone": "9876543210",
-  "userPan": "ABCDE1234F"
-}
+### 4. 🔍 Instant Marketplace Search Bar
+- **Instant Search**: Filters products on every keystroke across name, brand, category, description, storage variants, and color names.
+- **Clean Empty State**: Displays tailored feedback and a *"Clear Search"* button when no products match.
+- **Reusable Component**: Fully decoupled inside `src/components/SearchBar/` with mobile-first 48px touch targets.
+
+### 5. 📄 Scalable 24-Product Catalog & Pagination
+- **Extended Real-World Catalog**: 24 complete products across 7 global smartphone brands:
+  - 🍏 **Apple**: iPhone 17 Pro, iPhone 16, iPhone 16 Pro Max, iPhone 15
+  - 🌌 **Samsung**: Galaxy S25 Ultra, Galaxy S24 FE, Galaxy Z Fold 6, Galaxy Z Flip 6
+  - 🔵 **Google**: Pixel 9 Pro, Pixel 9, Pixel 8a
+  - 🔴 **OnePlus**: OnePlus 13 5G, OnePlus 12, OnePlus Open, OnePlus Nord 4
+  - 🟠 **Xiaomi**: Xiaomi 14 Ultra, Xiaomi 14, Redmi Note 13 Pro+
+  - ⚪ **Nothing**: Nothing Phone (2), Nothing Phone (2a) Plus, CMF Phone 1
+  - 🟣 **Motorola**: Edge 50 Ultra, Razr 50 Ultra, Edge 50 Pro
+- **Reusable Pagination (`src/components/Pagination/`)**:
+  - Displays 6 products per page (4 full pages).
+  - Dynamically calculates `totalPages = Math.ceil(totalItems / itemsPerPage)`.
+  - Mounts **only 6 `ProductCard` components** in the DOM per page for optimal performance.
+  - Automatically resets or recalculates when search queries narrow results.
+  - Smoothly scrolls back to the product catalog on page transitions.
+
+### 6. 📈 Mutual Fund-Backed EMI Financing Matrix
+- **Wealth Creation on Every Purchase**: Transparent monthly EMI plans where cashback is routed directly to AMFI mutual fund folios (Parag Parikh Flexi Cap Fund, UTI Nifty 50 Index Fund, ICICI Prudential Bluechip Fund, SBI Small Cap Fund).
+- **Interactive Variant & EMI Plan Selector**: Switch storage options and tenures (3, 6, 12, 24 months) with dynamic price, interest rate, and cashback recalculation.
+- **Instant KYC & Order Checkout Drawer**: Simulated PAN and mobile number verification with celebratory confetti upon instant approval.
+
+---
+
+## 📂 Project Structure
+
 ```
-- **Response**:
-```json
-{
-  "success": true,
-  "message": "EMI Application and Mutual Fund cashback initialized successfully",
-  "data": {
-    "order_id": "1FI-89A7B2",
-    "status": "APPROVED",
-    "product_name": "Apple iPhone 17 Pro",
-    "monthly_emi": 21650,
-    "tenure_months": 6,
-    "cashback_invested": 3500,
-    "mutual_fund_target": "Parag Parikh Flexi Cap Fund",
-    "first_emi_date": "2026-10-04"
-  }
-}
+1fi/
+├── frontend/
+│   ├── public/
+│   │   ├── favicon.svg               # Custom OneFi purple & mint SVG favicon
+│   │   ├── assets/
+│   │   │   └── phone360/             # 360° frame sets (apple, samsung, pixel, oneplus, oppo)
+│   │   └── images/                   # Transparent phone cutouts & offer artwork
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── DeviceFrame/          # Smartphone viewport container & ambient lighting
+│   │   │   ├── layout/               # AppHeader, BottomNav
+│   │   │   ├── Pagination/           # Reusable Pagination component (Pagination.jsx/.css)
+│   │   │   ├── product/              # CheckoutDrawer, VariantSelector, EMIPlanSelector
+│   │   │   ├── ProductViewer/        # 360° Rotational touch/mouse viewer component
+│   │   │   ├── SearchBar/            # Marketplace SearchBar component (SearchBar.jsx/.css)
+│   │   │   └── shop/                 # LimitBalanceCard, OffersCarousel, ProductCard, ProductGrid, BrandPartnersStrip
+│   │   ├── data/
+│   │   │   ├── products.json         # 24-product catalog with variants & EMI plans
+│   │   │   ├── offers.json           # Hero offer banners data
+│   │   │   └── brandPartners.json    # Partner stores & brands
+│   │   ├── pages/
+│   │   │   ├── ShopPage.jsx          # Primary shop view with tabs
+│   │   │   └── ProductDetailPage.jsx # Product detail view with 360° viewer & EMI plans
+│   │   ├── services/
+│   │   │   └── api.js                # API & catalog data access layer with search/filter
+│   │   ├── App.jsx                   # Route coordinator & deep-linking handler
+│   │   ├── main.jsx                  # React application root
+│   │   └── index.css                 # Global CSS design tokens & utilities (--primary-purple)
+│   ├── index.html                    # Main HTML entry with SVG favicon
+│   ├── tailwind.config.js            # Tailwind theme tokens & shadow utilities
+│   └── vite.config.js                # Vite development server configuration
+├── package.json                      # Workspace root package scripts
+└── README.md                         # Project documentation
 ```
 
 ---
 
-## ⚡ Local Setup & Run Guide
+## 🚀 Getting Started
 
 ### 1. Prerequisites
-- **Node.js** (v18+)
-- **MongoDB Atlas** connection string (or local MongoDB daemon)
+- **Node.js** (v18.0 or higher recommended)
+- **npm** (v9.0 or higher)
 
-### 2. Install Dependencies
+### 2. Installation
+Clone the repository and install all dependencies:
+
 ```bash
-# Install backend dependencies
-cd backend
-npm install
+# Clone the repository
+git clone https://github.com/123HARSH456/1FI.git
+
+# Enter project directory
+cd 1FI
 
 # Install frontend dependencies
-cd ../frontend
-npm install
+npm run install:all
+# (or cd frontend && npm install)
 ```
 
-### 3. Configure Backend Environment
-In `backend/.env`, configure your MongoDB Atlas URI:
-```env
-PORT=5000
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.example.mongodb.net/1fi_marketplace?retryWrites=true&w=majority
-NODE_ENV=development
-```
+### 3. Running the Development Server
+Launch the local Vite development server:
 
-### 4. Seed the Database
-Populate 4 flagship products, multiple variants, and mutual-fund-backed EMI plans:
 ```bash
-cd backend
-npm run seed
-```
-
-### 5. Start Servers
-```bash
-# Terminal 1: Start Backend API (Port 5000)
-cd backend
-npm start
-
-# Terminal 2: Start Frontend (Port 3000)
-cd frontend
 npm run dev
+# (or cd frontend && npm run dev)
 ```
 
-Visit **`http://localhost:3000`** in your browser.
+The application will be live at:
+👉 **`http://localhost:3000`**
+
+### 4. Production Build
+Verify production compilation:
+
+```bash
+npm run build
+# (or cd frontend && npm run build)
+```
+
+The optimized bundle will be compiled to `frontend/dist/`.
 
 ---
 
-## 🎥 2-5 Minute Demo Video Recording Guide
+## 🧪 Interactive Walkthrough & Testing Guide
 
-When recording your video walkthrough for the evaluation team, follow this structured script:
+When testing or reviewing the application, verify the following core user flows:
 
-1. **Introduction (0:00 - 0:30)**:
-   - Introduce yourself and state the objective: adding the **1Fi Marketplace** and **Shop page** to the 1Fi ecosystem with mutual fund-backed EMI options.
-   - Highlight the authentic 1Fi visual theme (emerald accents, dark mode, card elevations, and mobile frame toggle).
-2. **Shop Page & 3-Tab Architecture (0:30 - 1:15)**:
-   - Click through the top 3 tabs:
-     - **Top Brands**: Show brand partner placeholders and "Notify Me" action.
-     - **Nearby Stores**: Show offline partner merchant locator placeholder.
-     - **1Fi Marketplace**: Show the active catalog, promotional hero banner ("Get ₹5,000 Invested in Mutual Funds"), and category/brand filters.
-3. **Product Detail & Variant Switching (1:15 - 2:15)**:
-   - Tap into a product (e.g. **Apple iPhone 17 Pro** at `/products/apple-iphone-17-pro`).
-   - Switch storage variants (256GB vs 512GB) and color swatches. Point out how the price, MRP discount, and monthly EMI recalculate dynamically via backend APIs.
-4. **Mutual Fund-Backed EMI Plans & Wealth Breakdown (2:15 - 3:15)**:
-   - Scroll to the EMI plans list. Explain the difference between **0% No-Cost EMI** and tenures up to 24 months.
-   - Point out the **1Fi Recommended** badge and the **Mutual Fund Cashback** callout (`₹3,500 invested into Parag Parikh Flexi Cap Fund`).
-   - Show the dedicated **1Fi Wealth Creation Benefit** card explaining AMFI direct folio credits.
-5. **Checkout Flow & Conclusion (3:15 - 4:00)**:
-   - Tap the sticky **"Proceed to Buy"** button.
-   - Show the slide-up checkout summary modal with EMI schedule, simulated PAN/Phone verification, and instant approval confirmation with confetti.
-   - Mention the clean backend architecture (Express REST APIs + MongoDB Atlas schema).
+1. **Explore the Shop Page (`http://localhost:3000`)**:
+   - Check the **1Fi Limit Card** with purple gradient and balance status.
+   - Inspect the **Search Bar**: type `"Google"` or `"Pro"` to watch the catalog update in real time with instant result counts.
+   - Click the clear icon **(×)** to immediately restore the full catalog.
+   - Watch the **Special Offers** banner auto-rotate through the commercial promotions.
+
+2. **Test Pagination**:
+   - Navigate to Page 2, 3, and 4 using the pagination buttons below the catalog.
+   - Notice that only 6 product cards are mounted per page for performance.
+   - Verify that the **Previous** button is disabled on Page 1, and the **Next** button is disabled on Page 4.
+   - Notice how changing pages smoothly scrolls back to the product section.
+
+3. **Experience the 360° Product Viewer**:
+   - Tap any device (e.g. *Apple iPhone 17 Pro*, *Samsung Galaxy S25 Ultra*, *Google Pixel 9 Pro*, or *OnePlus 13*).
+   - Drag horizontally with your mouse or swipe with your finger to spin the device 360 degrees.
+   - Switch variants (storage and color) and watch the price and EMI recalculate.
+
+4. **Avail 1Fi 0% EMI & Mutual Fund Investment**:
+   - Expand the **Flexible Financing & EMI** plans to inspect the mutual fund allocation callout (*"₹3,500 invested in Parag Parikh Flexi Cap Fund"*).
+   - Tap **Continue** to trigger the **Checkout Drawer**.
+   - Review your financing summary, enter mock PAN / Phone, and tap **Confirm & Avail 1Fi EMI**.
+   - Enjoy the celebratory confetti and approval confirmation!
+
+---
+
+## 📄 License
+MIT License © 2026 [123HARSH456](https://github.com/123HARSH456).
